@@ -18,6 +18,7 @@ class StatsFactory(documentProvider: DocumentProvider) {
   val player_stats = "td"
   val players_stats = "tr"
   val base_url = "http://espn.go.com/nba/boxscore?gameId=%s"
+  val stats = new Stats()
 
   def getGamesStats(games :Array[Game]) :mutable.Map[Game, ArrayBuffer[PlayerGameStats]] = {
     val allGamesStats = mutable.Map[Game, ArrayBuffer[PlayerGameStats]]()
@@ -68,7 +69,8 @@ class StatsFactory(documentProvider: DocumentProvider) {
       } else if (data.className equals did_not_play) {
         playerGameStats didNotPlay _
       } else {
-        Stats set(data, playerGameStats)
+        val stat = (data.className, data.text)
+        stats.set(stat._1, stat._2, playerGameStats)
       }
 
     }
