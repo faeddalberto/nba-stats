@@ -68,59 +68,11 @@ class StatsFactory(documentProvider: DocumentProvider) {
       } else if (data.className equals did_not_play) {
         playerGameStats didNotPlay _
       } else {
-        statsData(data, playerGameStats)
+        Stats set(data, playerGameStats)
       }
 
     }
     playerGameStats
-  }
-
-  private def statsData(choice :Element, playerGameStats: PlayerGameStats) :Unit = choice.className() match {
-    case "min" =>
-      val min = new MinutesPlayed(choice.text toInt)
-      playerGameStats minutesPlayed = min
-    case "fg" =>
-        val text = choice.text split "-"
-        val fg = new FieldGoals().made(text(0).toInt).attempted(text(1) toInt).asInstanceOf[FieldGoals]
-      playerGameStats fieldGoals = fg
-    case "3pt" =>
-        val text = choice.text split "-"
-        val threePts = new ThreePoints().made(text(0) toInt).attempted(text(1) toInt).asInstanceOf[ThreePoints]
-      playerGameStats threePoints = threePts
-    case "ft" =>
-        val text = choice.text split "-"
-        val ft = new FreeThrows().made(text(0) toInt).attempted(text(1) toInt).asInstanceOf[FreeThrows]
-      playerGameStats freeThrows = ft
-    case "oreb" =>
-        val oreb = new OffensiveRebounds(choice.text toInt)
-      playerGameStats offensiveRebounds = oreb
-    case "dreb" =>
-        val dreb = new DefensiveRebounds(choice.text toInt)
-      playerGameStats defensiveRebounds = dreb
-    case "reb" =>
-        val reb = new Rebounds(choice.text toInt)
-      playerGameStats rebounds = reb
-    case "ast" =>
-        val ast = new Assists(choice.text toInt)
-      playerGameStats assists = ast
-    case "stl" =>
-        val stl = new Steals(choice.text toInt)
-      playerGameStats steals = stl
-    case "blk" =>
-        val blk = new Blocks(choice.text toInt)
-      playerGameStats blocks = blk
-    case "to" =>
-        val to = new Turnovers(choice.text toInt)
-      playerGameStats turnovers = to
-    case "pf" =>
-        val pf = new PersonalFauls(choice.text toInt)
-      playerGameStats personalFauls = pf
-    case "plusminus" =>
-        val pm = new PlusMinus(choice.text toInt)
-      playerGameStats plusMinus = pm
-    case "pts" =>
-        val pts = new Points(choice.text toInt)
-      playerGameStats points = pts
   }
 
   private def getPlayer(td :Element, team :String) :Player = {
