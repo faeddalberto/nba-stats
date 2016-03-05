@@ -13,7 +13,9 @@ import scala.util.control.Breaks._
 
 class GameFactory(documentProvider :DocumentProvider) {
 
-  val table_odd_and_even_rows = "tr[class~=(?i)(oddrow|evenrow)]"
+  val unordered_info_list = "ul li"
+  val team_games = "tr[class~=(?i)(oddrow|evenrow)]"
+  val game_data = "td"
   val base_url = "http://espn.go.com/nba/team/schedule/_/name/%s/year/%d/%s"
   val dtf :DateTimeFormatter = DateTimeFormat forPattern "yyyy MMM dd"
 
@@ -31,11 +33,11 @@ class GameFactory(documentProvider :DocumentProvider) {
     val doc :Document = documentProvider.provideDocument(base_url format (team.prefix_1, year, team.prefix_2))
 
     breakable {
-      val rows = doc select table_odd_and_even_rows iterator
+      val games = doc select team_games iterator
 
-      while (rows hasNext) {
-        val row = rows next
-        val data = row select "td"
+      while (games hasNext) {
+        val game = games next
+        val data = game select game_data
 
         val date = getGameDate(year, data)
         if (date.isAfter(LocalDate.now()) || date.isEqual(LocalDate.now())) break
@@ -43,7 +45,7 @@ class GameFactory(documentProvider :DocumentProvider) {
         val isHomeTeam = if (text(data, 1, 0) equals "vs") true else false
         val otherTeamName = text(data, 1, 2)
         val score = text(data, 2, 1).split(" ")(0)
-        val matchId = data.get(2).select("ul li").get(1).select("a").attr("href").split("id=")(1)
+        val matchId = data.get(2).select(unordered_info_list).get(1).select("a").attr("href").split("id=")(1)
         val won = if (text(data, 2, 0) equals "W") true else false
 
         teamGames += getGame(matchId, date, isHomeTeam, team.name, otherTeamName, score, won)
@@ -91,7 +93,7 @@ class GameFactory(documentProvider :DocumentProvider) {
   }
 
   private def text(columns :Elements, colIndex :Int, listIndex :Int) :String = {
-    columns.get(colIndex).select("ul li").get(listIndex).text
+    columns.get(colIndex).select(unordered_info_list).get(listIndex).text
   }
 
   private def getGameDate(year :Int, columns :Elements) :LocalDate = {
