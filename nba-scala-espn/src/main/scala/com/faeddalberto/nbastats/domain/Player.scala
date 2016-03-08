@@ -1,6 +1,8 @@
 package com.faeddalberto.nbastats.domain
 
-class Player (val id :Int, val name :String, val team :String, val role :String) {
+import com.faeddalberto.nbastats.domain.Position.Position
+
+class Player (val id :Int, val name :String, val team :String, val role :Position) {
 
   override def toString = {
     s"Id: $id, Name: $name, Team: $team, Role: $role"

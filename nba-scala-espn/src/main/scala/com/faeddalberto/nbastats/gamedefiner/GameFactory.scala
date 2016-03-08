@@ -4,7 +4,6 @@ import com.faeddalberto.nbastats.domain.{Game, Team}
 import com.faeddalberto.nbastats.provider.DocumentProvider
 import org.joda.time.LocalDate
 import org.joda.time.format.{DateTimeFormat, DateTimeFormatter}
-import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
 
 import scala.collection.mutable
@@ -30,7 +29,7 @@ class GameFactory(documentProvider :DocumentProvider) {
 
   def getSeasonGamesResultsForTeam(team :Team, year :Int) :ArrayBuffer[Game] = {
     var teamGames = ArrayBuffer[Game]()
-    val doc :Document = documentProvider.provideDocument(base_url format (team.prefix_1, year, team.prefix_2))
+    val doc = documentProvider.provideDocument(base_url format (team.prefix_1, year, team.prefix_2))
 
     breakable {
       val games = doc select team_games iterator
@@ -40,7 +39,7 @@ class GameFactory(documentProvider :DocumentProvider) {
         val data = game select game_data
 
         val date = getGameDate(year, data)
-        if (date.isAfter(LocalDate.now()) || date.isEqual(LocalDate.now())) break
+        if (date.isEqual(today) || date.isAfter(today)) break
 
         val isHomeTeam = if (text(data, 1, 0) equals "vs") true else false
         val otherTeamName = text(data, 1, 2)
@@ -48,48 +47,10 @@ class GameFactory(documentProvider :DocumentProvider) {
         val matchId = data.get(2).select(unordered_info_list).get(1).select("a").attr("href").split("id=")(1)
         val won = if (text(data, 2, 0) equals "W") true else false
 
-        teamGames += getGame(matchId, date, isHomeTeam, team.name, otherTeamName, score, won)
+        teamGames += Game.getGame(matchId, date, isHomeTeam, team.name, otherTeamName, score, won)
       }
     }
     teamGames
-  }
-
-  private def getGame(matchId :String, date :LocalDate, isHomeTeam :Boolean, mainTeamName :String,
-              otherTeamName :String, score :String, won :Boolean) :Game = {
-    var homeTeamName :String = null
-    var homeTeamScore :Int = 0
-    var visitTeamName :String = null
-    var visitTeamScore :Int = 0
-
-    val scoreSplit = score split "-"
-
-    if (isHomeTeam) {
-      if (won) {
-        homeTeamName = mainTeamName
-        visitTeamName = otherTeamName
-        homeTeamScore = scoreSplit(0).toInt
-        visitTeamScore = scoreSplit(1).toInt
-      } else {
-        homeTeamName = otherTeamName
-        visitTeamName = mainTeamName
-        homeTeamScore = scoreSplit(1).toInt
-        visitTeamScore = scoreSplit(0).toInt
-      }
-    } else {
-      if (won) {
-        homeTeamName = otherTeamName
-        visitTeamName = mainTeamName
-        homeTeamScore = scoreSplit(1).toInt
-        visitTeamScore = scoreSplit(0).toInt
-      } else {
-        homeTeamName = mainTeamName
-        visitTeamName = otherTeamName
-        homeTeamScore = scoreSplit(0).toInt
-        visitTeamScore = scoreSplit(1).toInt
-      }
-    }
-
-    new Game(matchId, date, homeTeamName, homeTeamScore, visitTeamName, visitTeamScore)
   }
 
   private def text(columns :Elements, colIndex :Int, listIndex :Int) :String = {
@@ -102,4 +63,6 @@ class GameFactory(documentProvider :DocumentProvider) {
     if (newYear) date = date.minusYears(1)
     date
   }
+
+  def today :LocalDate = LocalDate.now
 }

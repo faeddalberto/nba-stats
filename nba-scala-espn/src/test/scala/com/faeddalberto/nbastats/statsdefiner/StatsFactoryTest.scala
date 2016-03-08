@@ -1,7 +1,7 @@
 package com.faeddalberto.nbastats.statsdefiner
 
 import com.faeddalberto.nbastats.domain.statistics._
-import com.faeddalberto.nbastats.domain.{Player, Game}
+import com.faeddalberto.nbastats.domain.{Position, Player, Game}
 import com.faeddalberto.nbastats.provider.StubGameStatsDocumentProvider
 import org.joda.time.LocalDate
 import org.scalatest.{FlatSpec, Matchers}
@@ -20,7 +20,7 @@ class StatsFactoryTest extends FlatSpec with Matchers {
 
     val jNoah = playersStats(0)
 
-    jNoah.player shouldEqual new Player(id = 3224, name = "J. Noah", team = "Chicago Bulls", role = "C")
+    jNoah.player shouldEqual new Player(id = 3224, name = "J. Noah", team = "Chicago Bulls", role = Position.withName("C"))
     jNoah.minutesPlayed shouldEqual new MinutesPlayed(20)
     jNoah.fieldGoals shouldEqual new FieldGoals().made(1).attempted(4)
     jNoah.threePoints shouldEqual new ThreePoints().made(0).attempted(0)

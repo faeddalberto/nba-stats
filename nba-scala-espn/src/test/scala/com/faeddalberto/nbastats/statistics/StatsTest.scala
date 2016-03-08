@@ -1,7 +1,7 @@
 package com.faeddalberto.nbastats.statistics
 
 import com.faeddalberto.nbastats.domain.statistics._
-import com.faeddalberto.nbastats.domain.{Player, PlayerGameStats}
+import com.faeddalberto.nbastats.domain.{Position, Player, PlayerGameStats}
 import org.scalatest.{FlatSpec, Matchers}
 
 class StatsTest extends FlatSpec with Matchers{
@@ -16,7 +16,7 @@ class StatsTest extends FlatSpec with Matchers{
     val freeThrows = ("ft", "2-4")
 
     var playerStats = new PlayerGameStats("23432")
-    playerStats player = new Player(id = 234543, name = "D. Rose", team = "Chicago Bulls", role = "PG")
+    playerStats player = new Player(id = 234543, name = "D. Rose", team = "Chicago Bulls", role = Position.withName("PG"))
 
     val stats = new Stats()
     stats.set(mins _1, mins _2, playerStats)

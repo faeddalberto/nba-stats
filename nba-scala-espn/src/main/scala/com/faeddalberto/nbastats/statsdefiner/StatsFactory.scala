@@ -1,7 +1,7 @@
 package com.faeddalberto.nbastats.statsdefiner
 
 import com.faeddalberto.nbastats.domain.statistics._
-import com.faeddalberto.nbastats.domain.{Game, Player, PlayerGameStats}
+import com.faeddalberto.nbastats.domain.{Position, Game, Player, PlayerGameStats}
 import com.faeddalberto.nbastats.provider.DocumentProvider
 import org.jsoup.nodes.{Document, Element}
 import org.jsoup.select.Elements
@@ -23,23 +23,23 @@ class StatsFactory(documentProvider: DocumentProvider) {
   def getGamesStats(games :Array[Game]) :mutable.Map[Game, ArrayBuffer[PlayerGameStats]] = {
     val allGamesStats = mutable.Map[Game, ArrayBuffer[PlayerGameStats]]()
 
-    for (forGame <- games) {
-      allGamesStats(forGame) = getGameStats(forGame)
+    for (aGame <- games) {
+      allGamesStats(aGame) = getGameStats(aGame)
     }
 
     allGamesStats
   }
 
-  def getGameStats(forGame :Game) :ArrayBuffer[PlayerGameStats] = {
+  def getGameStats(aGame :Game) :ArrayBuffer[PlayerGameStats] = {
     val gameStats = ArrayBuffer[PlayerGameStats]()
-    val doc :Document = documentProvider.provideDocument(base_url format forGame.matchId)
+    val doc :Document = documentProvider.provideDocument(base_url format aGame.matchId)
 
     val table = doc select "table.mod-data"
     val bodies = table select "tbody"
 
     for (i <- 0 to 3) {
-      val team = if (i == 0 || i == 1) forGame.visitTeam else forGame.homeTeam
-      gameStats ++= playersStatsByTeam(bodies.get(i) select players_stats, forGame.matchId, team)
+      val team = if (i == 0 || i == 1) aGame.visitTeam else aGame.homeTeam
+      gameStats ++= playersStatsByTeam(bodies.get(i) select players_stats, aGame.matchId, team)
     }
 
     gameStats
@@ -70,7 +70,7 @@ class StatsFactory(documentProvider: DocumentProvider) {
         playerGameStats didNotPlay _
       } else {
         val stat = (data.className, data.text)
-        stats.set(stat._1, stat._2, playerGameStats)
+        stats set(stat._1, stat._2, playerGameStats)
       }
 
     }
@@ -83,6 +83,6 @@ class StatsFactory(documentProvider: DocumentProvider) {
     val playerId = a.attr("href").split("/").last toInt
     val name = a text
 
-    new Player(playerId, name, team, position)
+    new Player(playerId, name, team, Position.withName(position))
   }
 }
