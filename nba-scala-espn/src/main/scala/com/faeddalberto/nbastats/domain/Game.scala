@@ -32,6 +32,12 @@ class Game private(val matchId :String, val date :LocalDate,
 
 object Game {
 
+    def getGame(matchId :String, date :LocalDate,
+                homeTeam :String, homeTeamScore :Int,
+                visitTeam :String, visitTeamScore :Int) :Game = {
+      new Game(matchId, date, homeTeam, homeTeamScore, visitTeam, visitTeamScore)
+    }
+
     def getGame(matchId :String, date :LocalDate, isHomeTeam :Boolean, mainTeamName :String,
                       otherTeamName :String, score :String, won :Boolean) :Game = {
 
