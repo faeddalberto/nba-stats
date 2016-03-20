@@ -1,4 +1,4 @@
-package com.faeddalberto.nbastats.gamedefiner
+package com.faeddalberto.nbastats.gamefinder
 
 import com.faeddalberto.nbastats.domain.Team
 import com.faeddalberto.nbastats.provider.StubGamesDocumentProvider

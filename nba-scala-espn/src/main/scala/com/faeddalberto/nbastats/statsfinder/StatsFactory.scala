@@ -1,4 +1,4 @@
-package com.faeddalberto.nbastats.statsdefiner
+package com.faeddalberto.nbastats.statsfinder
 
 import com.faeddalberto.nbastats.domain.statistics._
 import com.faeddalberto.nbastats.domain.{Position, Game, Player, PlayerGameStats}

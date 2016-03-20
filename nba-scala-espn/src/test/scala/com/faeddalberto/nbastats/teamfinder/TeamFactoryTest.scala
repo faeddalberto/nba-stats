@@ -1,4 +1,4 @@
-package com.faeddalberto.nbastats.teamdefiner
+package com.faeddalberto.nbastats.teamfinder
 
 import com.faeddalberto.nbastats.domain.Team
 import com.faeddalberto.nbastats.provider.StubTeamDocumentProvider
