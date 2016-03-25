@@ -1,0 +1,757 @@
+<div class="row-wrapper">
+    <div class="col column-one gamepackage-away-wrap">
+        <div class="sub-module">
+            <div class="content hide-bench">
+                <div class="table-caption">
+                    <div class="team-name">
+                        <img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/chi.png&h=100&w=100"/>
+                    </div>Bulls
+
+                    <div class="toggle-btn sm">
+                        <input id="toggleBtn-0" class="toggle-input round" type="checkbox" >
+                            <label for="toggleBtn-0">
+                                <span>All Stats</span>
+                            </label>
+                        </div>
+                    </div>
+                    <table class="mod-data" data-fix-cols="1" data-behavior="responsive_table" data-mobile-force-responsive="true" data-set-cell-heights="true">
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th class="name">starters</th>
+                                <th class="min">MIN</th>
+                                <th class="fg">FG</th>
+                                <th class="3pt">3PT</th>
+                                <th class="ft">FT</th>
+                                <th class="oreb">OREB</th>
+                                <th class="dreb">DREB</th>
+                                <th class="reb">REB</th>
+                                <th class="ast">AST</th>
+                                <th class="stl">STL</th>
+                                <th class="blk">BLK</th>
+                                <th class="to">TO</th>
+                                <th class="pf">PF</th>
+                                <th class="plusminus">+/-</th>
+                                <th class="pts">PTS</th>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name" ">
+                                <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/3224">J. Noah</a>
+                                <span class="position">C</span>
+                            </td>
+                            <td class="min">20</td>
+                            <td class="fg">1-4</td>
+                            <td class="3pt">0-0</td>
+                            <td class="ft">1-2</td>
+                            <td class="oreb">2</td>
+                            <td class="dreb">4</td>
+                            <td class="reb">6</td>
+                            <td class="ast">2</td>
+                            <td class="stl">0</td>
+                            <td class="blk">3</td>
+                            <td class="to">2</td>
+                            <td class="pf">2</td>
+                            <td class="plusminus">+3</td>
+                            <td class="pts">3</td>
+                        </tr>
+                        <tr>
+                            <td class="name" ">
+                                <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/996">P. Gasol</a>
+                                <span class="position">C</span>
+                            </td>
+                            <td class="min">29</td>
+                            <td class="fg">7-11</td>
+                            <td class="3pt">0-0</td>
+                            <td class="ft">7-8</td>
+                            <td class="oreb">4</td>
+                            <td class="dreb">7</td>
+                            <td class="reb">11</td>
+                            <td class="ast">0</td>
+                            <td class="stl">0</td>
+                            <td class="blk">0</td>
+                            <td class="to">1</td>
+                            <td class="pf">1</td>
+                            <td class="plusminus">+15</td>
+                            <td class="pts">21</td>
+                        </tr>
+                        <tr>
+                            <td class="name" ">
+                                <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/3456">D. Rose</a>
+                                <span class="position">PG</span>
+                            </td>
+                            <td class="min">21</td>
+                            <td class="fg">3-7</td>
+                            <td class="3pt">0-3</td>
+                            <td class="ft">7-8</td>
+                            <td class="oreb">0</td>
+                            <td class="dreb">3</td>
+                            <td class="reb">3</td>
+                            <td class="ast">5</td>
+                            <td class="stl">2</td>
+                            <td class="blk">0</td>
+                            <td class="to">3</td>
+                            <td class="pf">2</td>
+                            <td class="plusminus">+4</td>
+                            <td class="pts">13</td>
+                        </tr>
+                        <tr>
+                            <td class="name" ">
+                                <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/1708">M. Dunleavy</a>
+                                <span class="position">SG</span>
+                            </td>
+                            <td class="min">31</td>
+                            <td class="fg">0-5</td>
+                            <td class="3pt">0-4</td>
+                            <td class="ft">0-0</td>
+                            <td class="oreb">0</td>
+                            <td class="dreb">3</td>
+                            <td class="reb">3</td>
+                            <td class="ast">4</td>
+                            <td class="stl">1</td>
+                            <td class="blk">0</td>
+                            <td class="to">1</td>
+                            <td class="pf">1</td>
+                            <td class="plusminus">+17</td>
+                            <td class="pts">0</td>
+                        </tr>
+                        <tr>
+                            <td class="name" ">
+                                <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/1981">K. Hinrich</a>
+                                <span class="position">SG</span>
+                            </td>
+                            <td class="min">24</td>
+                            <td class="fg">4-10</td>
+                            <td class="3pt">3-7</td>
+                            <td class="ft">1-1</td>
+                            <td class="oreb">0</td>
+                            <td class="dreb">1</td>
+                            <td class="reb">1</td>
+                            <td class="ast">0</td>
+                            <td class="stl">1</td>
+                            <td class="blk">0</td>
+                            <td class="to">2</td>
+                            <td class="pf">3</td>
+                            <td class="plusminus">+8</td>
+                            <td class="pts">12</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th class="name">bench</th>
+                            <th class="min">MIN</th>
+                            <th class="fg">FG</th>
+                            <th class="3pt">3PT</th>
+                            <th class="ft">FT</th>
+                            <th class="oreb">OREB</th>
+                            <th class="dreb">DREB</th>
+                            <th class="reb">REB</th>
+                            <th class="ast">AST</th>
+                            <th class="stl">STL</th>
+                            <th class="blk">BLK</th>
+                            <th class="to">TO</th>
+                            <th class="pf">PF</th>
+                            <th class="plusminus">+/-</th>
+                            <th class="pts">PTS</th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/3986">T. Gibson</a>
+                            <span class="position">PF</span>
+                        </td>
+                        <td class="min">28</td>
+                        <td class="fg">10-12</td>
+                        <td class="3pt">0-0</td>
+                        <td class="ft">2-4</td>
+                        <td class="oreb">3</td>
+                        <td class="dreb">5</td>
+                        <td class="reb">8</td>
+                        <td class="ast">1</td>
+                        <td class="stl">1</td>
+                        <td class="blk">1</td>
+                        <td class="to">0</td>
+                        <td class="pf">1</td>
+                        <td class="plusminus">+28</td>
+                        <td class="pts">22</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/6459">N. Mirotic</a>
+                            <span class="position">PF</span>
+                        </td>
+                        <td class="min">15</td>
+                        <td class="fg">1-2</td>
+                        <td class="3pt">1-2</td>
+                        <td class="ft">2-2</td>
+                        <td class="oreb">0</td>
+                        <td class="dreb">7</td>
+                        <td class="reb">7</td>
+                        <td class="ast">1</td>
+                        <td class="stl">1</td>
+                        <td class="blk">0</td>
+                        <td class="to">2</td>
+                        <td class="pf">2</td>
+                        <td class="plusminus">+9</td>
+                        <td class="pts">5</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/2528354">C. Bairstow</a>
+                            <span class="position">PF</span>
+                        </td>
+                        <td class="min">4</td>
+                        <td class="fg">0-1</td>
+                        <td class="3pt">0-0</td>
+                        <td class="ft">0-0</td>
+                        <td class="oreb">0</td>
+                        <td class="dreb">0</td>
+                        <td class="reb">0</td>
+                        <td class="ast">0</td>
+                        <td class="stl">0</td>
+                        <td class="blk">0</td>
+                        <td class="to">1</td>
+                        <td class="pf">0</td>
+                        <td class="plusminus">-7</td>
+                        <td class="pts">0</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/2528353">T. Snell</a>
+                            <span class="position">SF</span>
+                        </td>
+                        <td class="min">17</td>
+                        <td class="fg">1-4</td>
+                        <td class="3pt">0-1</td>
+                        <td class="ft">1-1</td>
+                        <td class="oreb">0</td>
+                        <td class="dreb">1</td>
+                        <td class="reb">1</td>
+                        <td class="ast">0</td>
+                        <td class="stl">1</td>
+                        <td class="blk">0</td>
+                        <td class="to">1</td>
+                        <td class="pf">1</td>
+                        <td class="plusminus">+7</td>
+                        <td class="pts">3</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/2528588">D. McDermott</a>
+                            <span class="position">SF</span>
+                        </td>
+                        <td class="min">24</td>
+                        <td class="fg">5-9</td>
+                        <td class="3pt">2-5</td>
+                        <td class="ft">0-0</td>
+                        <td class="oreb">1</td>
+                        <td class="dreb">4</td>
+                        <td class="reb">5</td>
+                        <td class="ast">2</td>
+                        <td class="stl">1</td>
+                        <td class="blk">0</td>
+                        <td class="to">1</td>
+                        <td class="pf">2</td>
+                        <td class="plusminus">+16</td>
+                        <td class="pts">12</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/3192">A. Brooks</a>
+                            <span class="position">PG</span>
+                        </td>
+                        <td class="min">24</td>
+                        <td class="fg">4-5</td>
+                        <td class="3pt">1-1</td>
+                        <td class="ft">4-4</td>
+                        <td class="oreb">0</td>
+                        <td class="dreb">2</td>
+                        <td class="reb">2</td>
+                        <td class="ast">6</td>
+                        <td class="stl">1</td>
+                        <td class="blk">0</td>
+                        <td class="to">1</td>
+                        <td class="pf">3</td>
+                        <td class="plusminus">+25</td>
+                        <td class="pts">13</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/6460">E. Moore</a>
+                            <span class="position">SG</span>
+                        </td>
+                        <td class="min">3</td>
+                        <td class="fg">0-1</td>
+                        <td class="3pt">0-1</td>
+                        <td class="ft">0-0</td>
+                        <td class="oreb">0</td>
+                        <td class="dreb">0</td>
+                        <td class="reb">0</td>
+                        <td class="ast">0</td>
+                        <td class="stl">0</td>
+                        <td class="blk">0</td>
+                        <td class="to">0</td>
+                        <td class="pf">0</td>
+                        <td class="plusminus">-5</td>
+                        <td class="pts">0</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/568">N. Mohammed</a>
+                            <span class="position">C</span>
+                        </td>
+                        <td class="dnp" colspan="14">DNP-COACH'S DECISION</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td class="name">TEAM</td>
+                        <td class="min"></td>
+                        <td class="fg">36-71</td>
+                        <td class="3pt">7-24</td>
+                        <td class="ft">25-30</td>
+                        <td class="oreb">10</td>
+                        <td class="dreb">37</td>
+                        <td class="reb">47</td>
+                        <td class="ast">21</td>
+                        <td class="stl">9</td>
+                        <td class="blk">4</td>
+                        <td class="to">15</td>
+                        <td class="pf">18</td>
+                        <td class="plusminus"></td>
+                        <td class="pts">104</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td class="name">&nbsp;</td>
+                        <td class="min"></td>
+                        <td class="fg">50.7%</td>
+                        <td class="3pt">29.2%</td>
+                        <td class="ft">83.3%</td>
+                        <td class="oreb"></td>
+                        <td class="dreb"></td>
+                        <td class="reb"></td>
+                        <td class="ast"></td>
+                        <td class="stl"></td>
+                        <td class="blk"></td>
+                        <td class="to"></td>
+                        <td class="pf"></td>
+                        <td class="plusminus"></td>
+                        <td class="pts"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="table-footnote show-hide" data-behavior="table_toggle_bench">
+                <span>Show Bench</span>
+            </div>
+        </div>
+        <div class="boxscore-legend">+/- denotes team's net points while the player is on the court</div>
+        <div class="boxscore-team-stats">
+            <div>
+                <span class="label">Fast Break Points:  </span>
+                <span class="display-value">14</span>
+            </div>
+            <div>
+                <span class="label">Points in Paint:  </span>
+                <span class="display-value">42</span>
+            </div>
+            <div>
+                <span class="label">Total Turnovers (Points Off Turnovers):  </span>
+                <span class="display-value">15 (17)</span>
+            </div>
+            <div>
+                <span class="label">Flagrant Fouls:  </span>
+                <span class="display-value">0</span>
+            </div>
+            <div>
+                <span class="label">Technical Fouls:  </span>
+                <span class="display-value">2</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col column-two gamepackage-home-wrap">
+    <div class="sub-module">
+        <div class="content hide-bench">
+            <div class="table-caption">
+                <div class="team-name">
+                    <img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/ny.png&h=100&w=100"/>
+                </div>Knicks
+
+                <div class="toggle-btn sm">
+                    <input id="toggleBtn-1" class="toggle-input round" type="checkbox" >
+                        <label for="toggleBtn-1">
+                            <span>All Stats</span>
+                        </label>
+                    </div>
+                </div>
+                <table class="mod-data" data-fix-cols="1" data-behavior="responsive_table" data-mobile-force-responsive="true" data-set-cell-heights="true">
+                    <caption></caption>
+                    <thead>
+                        <tr>
+                            <th class="name">starters</th>
+                            <th class="min">MIN</th>
+                            <th class="fg">FG</th>
+                            <th class="3pt">3PT</th>
+                            <th class="ft">FT</th>
+                            <th class="oreb">OREB</th>
+                            <th class="dreb">DREB</th>
+                            <th class="reb">REB</th>
+                            <th class="ast">AST</th>
+                            <th class="stl">STL</th>
+                            <th class="blk">BLK</th>
+                            <th class="to">TO</th>
+                            <th class="pf">PF</th>
+                            <th class="plusminus">+/-</th>
+                            <th class="pts">PTS</th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/1727">A. Stoudemire</a>
+                            <span class="position">PF</span>
+                        </td>
+                        <td class="min">24</td>
+                        <td class="fg">5-9</td>
+                        <td class="3pt">0-0</td>
+                        <td class="ft">2-2</td>
+                        <td class="oreb">3</td>
+                        <td class="dreb">5</td>
+                        <td class="reb">8</td>
+                        <td class="ast">0</td>
+                        <td class="stl">1</td>
+                        <td class="blk">1</td>
+                        <td class="to">1</td>
+                        <td class="pf">3</td>
+                        <td class="plusminus">-6</td>
+                        <td class="pts">12</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/1975">C. Anthony</a>
+                            <span class="position">SF</span>
+                        </td>
+                        <td class="min">29</td>
+                        <td class="fg">5-13</td>
+                        <td class="3pt">1-3</td>
+                        <td class="ft">3-4</td>
+                        <td class="oreb">2</td>
+                        <td class="dreb">2</td>
+                        <td class="reb">4</td>
+                        <td class="ast">3</td>
+                        <td class="stl">1</td>
+                        <td class="blk">0</td>
+                        <td class="to">3</td>
+                        <td class="pf">1</td>
+                        <td class="plusminus">-9</td>
+                        <td class="pts">14</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/991">S. Dalembert</a>
+                            <span class="position">C</span>
+                        </td>
+                        <td class="min">20</td>
+                        <td class="fg">2-5</td>
+                        <td class="3pt">0-0</td>
+                        <td class="ft">2-2</td>
+                        <td class="oreb">2</td>
+                        <td class="dreb">2</td>
+                        <td class="reb">4</td>
+                        <td class="ast">2</td>
+                        <td class="stl">0</td>
+                        <td class="blk">3</td>
+                        <td class="to">1</td>
+                        <td class="pf">2</td>
+                        <td class="plusminus">-3</td>
+                        <td class="pts">6</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/2596158">S. Larkin</a>
+                            <span class="position">PG</span>
+                        </td>
+                        <td class="min">26</td>
+                        <td class="fg">2-6</td>
+                        <td class="3pt">0-2</td>
+                        <td class="ft">2-2</td>
+                        <td class="oreb">0</td>
+                        <td class="dreb">2</td>
+                        <td class="reb">2</td>
+                        <td class="ast">3</td>
+                        <td class="stl">1</td>
+                        <td class="blk">0</td>
+                        <td class="to">0</td>
+                        <td class="pf">2</td>
+                        <td class="plusminus">-17</td>
+                        <td class="pts">6</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ">
+                            <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/6468">I. Shumpert</a>
+                            <span class="position">SG</span>
+                        </td>
+                        <td class="min">20</td>
+                        <td class="fg">2-9</td>
+                        <td class="3pt">1-2</td>
+                        <td class="ft">0-0</td>
+                        <td class="oreb">1</td>
+                        <td class="dreb">2</td>
+                        <td class="reb">3</td>
+                        <td class="ast">1</td>
+                        <td class="stl">3</td>
+                        <td class="blk">0</td>
+                        <td class="to">0</td>
+                        <td class="pf">2</td>
+                        <td class="plusminus">+8</td>
+                        <td class="pts">5</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th class="name">bench</th>
+                        <th class="min">MIN</th>
+                        <th class="fg">FG</th>
+                        <th class="3pt">3PT</th>
+                        <th class="ft">FT</th>
+                        <th class="oreb">OREB</th>
+                        <th class="dreb">DREB</th>
+                        <th class="reb">REB</th>
+                        <th class="ast">AST</th>
+                        <th class="stl">STL</th>
+                        <th class="blk">BLK</th>
+                        <th class="to">TO</th>
+                        <th class="pf">PF</th>
+                        <th class="plusminus">+/-</th>
+                        <th class="pts">PTS</th>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name" ">
+                        <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/3232">J. Smith</a>
+                        <span class="position">PF</span>
+                    </td>
+                    <td class="min">14</td>
+                    <td class="fg">4-9</td>
+                    <td class="3pt">0-0</td>
+                    <td class="ft">0-0</td>
+                    <td class="oreb">0</td>
+                    <td class="dreb">1</td>
+                    <td class="reb">1</td>
+                    <td class="ast">0</td>
+                    <td class="stl">0</td>
+                    <td class="blk">0</td>
+                    <td class="to">0</td>
+                    <td class="pf">3</td>
+                    <td class="plusminus">-16</td>
+                    <td class="pts">8</td>
+                </tr>
+                <tr>
+                    <td class="name" ">
+                        <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/2991227">C. Early</a>
+                        <span class="position">SF</span>
+                    </td>
+                    <td class="min">7</td>
+                    <td class="fg">1-1</td>
+                    <td class="3pt">0-0</td>
+                    <td class="ft">0-0</td>
+                    <td class="oreb">0</td>
+                    <td class="dreb">0</td>
+                    <td class="reb">0</td>
+                    <td class="ast">0</td>
+                    <td class="stl">0</td>
+                    <td class="blk">0</td>
+                    <td class="to">1</td>
+                    <td class="pf">0</td>
+                    <td class="plusminus">+8</td>
+                    <td class="pts">2</td>
+                </tr>
+                <tr>
+                    <td class="name" ">
+                        <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/6576">Q. Acy</a>
+                        <span class="position">SF</span>
+                    </td>
+                    <td class="min">21</td>
+                    <td class="fg">3-6</td>
+                    <td class="3pt">0-0</td>
+                    <td class="ft">0-0</td>
+                    <td class="oreb">2</td>
+                    <td class="dreb">4</td>
+                    <td class="reb">6</td>
+                    <td class="ast">1</td>
+                    <td class="stl">0</td>
+                    <td class="blk">1</td>
+                    <td class="to">2</td>
+                    <td class="pf">4</td>
+                    <td class="plusminus">-15</td>
+                    <td class="pts">6</td>
+                </tr>
+                <tr>
+                    <td class="name" ">
+                        <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/2488674">T. Wear</a>
+                        <span class="position">SF</span>
+                    </td>
+                    <td class="min">6</td>
+                    <td class="fg">1-3</td>
+                    <td class="3pt">0-0</td>
+                    <td class="ft">0-0</td>
+                    <td class="oreb">0</td>
+                    <td class="dreb">0</td>
+                    <td class="reb">0</td>
+                    <td class="ast">0</td>
+                    <td class="stl">0</td>
+                    <td class="blk">0</td>
+                    <td class="to">2</td>
+                    <td class="pf">0</td>
+                    <td class="plusminus">-6</td>
+                    <td class="pts">2</td>
+                </tr>
+                <tr>
+                    <td class="name" ">
+                        <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/4267">C. Aldrich</a>
+                        <span class="position">C</span>
+                    </td>
+                    <td class="min">17</td>
+                    <td class="fg">1-2</td>
+                    <td class="3pt">0-0</td>
+                    <td class="ft">0-0</td>
+                    <td class="oreb">4</td>
+                    <td class="dreb">3</td>
+                    <td class="reb">7</td>
+                    <td class="ast">2</td>
+                    <td class="stl">0</td>
+                    <td class="blk">0</td>
+                    <td class="to">1</td>
+                    <td class="pf">2</td>
+                    <td class="plusminus">-8</td>
+                    <td class="pts">2</td>
+                </tr>
+                <tr>
+                    <td class="name" ">
+                        <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/4182">P. Prigioni</a>
+                        <span class="position">PG</span>
+                    </td>
+                    <td class="min">17</td>
+                    <td class="fg">1-4</td>
+                    <td class="3pt">0-3</td>
+                    <td class="ft">2-3</td>
+                    <td class="oreb">0</td>
+                    <td class="dreb">2</td>
+                    <td class="reb">2</td>
+                    <td class="ast">3</td>
+                    <td class="stl">3</td>
+                    <td class="blk">0</td>
+                    <td class="to">0</td>
+                    <td class="pf">1</td>
+                    <td class="plusminus">-12</td>
+                    <td class="pts">4</td>
+                </tr>
+                <tr>
+                    <td class="name" ">
+                        <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/2528210">T. Hardaway Jr.</a>
+                        <span class="position">SG</span>
+                    </td>
+                    <td class="min">18</td>
+                    <td class="fg">2-10</td>
+                    <td class="3pt">1-6</td>
+                    <td class="ft">2-2</td>
+                    <td class="oreb">0</td>
+                    <td class="dreb">0</td>
+                    <td class="reb">0</td>
+                    <td class="ast">1</td>
+                    <td class="stl">0</td>
+                    <td class="blk">0</td>
+                    <td class="to">0</td>
+                    <td class="pf">2</td>
+                    <td class="plusminus">-22</td>
+                    <td class="pts">7</td>
+                </tr>
+                <tr>
+                    <td class="name" ">
+                        <a  name="&lpos=nba:game:boxscore:playercard" href="http://espn.go.com/nba/player/_/id/2444">J.R. Smith</a>
+                        <span class="position">SG</span>
+                    </td>
+                    <td class="min">22</td>
+                    <td class="fg">2-8</td>
+                    <td class="3pt">0-1</td>
+                    <td class="ft">2-2</td>
+                    <td class="oreb">0</td>
+                    <td class="dreb">1</td>
+                    <td class="reb">1</td>
+                    <td class="ast">3</td>
+                    <td class="stl">0</td>
+                    <td class="blk">0</td>
+                    <td class="to">0</td>
+                    <td class="pf">0</td>
+                    <td class="plusminus">-22</td>
+                    <td class="pts">6</td>
+                </tr>
+                <tr class="highlight">
+                    <td class="name">TEAM</td>
+                    <td class="min"></td>
+                    <td class="fg">31-85</td>
+                    <td class="3pt">3-17</td>
+                    <td class="ft">15-17</td>
+                    <td class="oreb">14</td>
+                    <td class="dreb">24</td>
+                    <td class="reb">38</td>
+                    <td class="ast">19</td>
+                    <td class="stl">9</td>
+                    <td class="blk">5</td>
+                    <td class="to">11</td>
+                    <td class="pf">22</td>
+                    <td class="plusminus"></td>
+                    <td class="pts">80</td>
+                </tr>
+                <tr class="highlight">
+                    <td class="name">&nbsp;</td>
+                    <td class="min"></td>
+                    <td class="fg">36.5%</td>
+                    <td class="3pt">17.6%</td>
+                    <td class="ft">88.2%</td>
+                    <td class="oreb"></td>
+                    <td class="dreb"></td>
+                    <td class="reb"></td>
+                    <td class="ast"></td>
+                    <td class="stl"></td>
+                    <td class="blk"></td>
+                    <td class="to"></td>
+                    <td class="pf"></td>
+                    <td class="plusminus"></td>
+                    <td class="pts"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-footnote show-hide" data-behavior="table_toggle_bench">
+            <span>Show Bench</span>
+        </div>
+    </div>
+    <div class="boxscore-legend">+/- denotes team's net points while the player is on the court</div>
+    <div class="boxscore-team-stats">
+        <div>
+            <span class="label">Fast Break Points:  </span>
+            <span class="display-value">8</span>
+        </div>
+        <div>
+            <span class="label">Points in Paint:  </span>
+            <span class="display-value">28</span>
+        </div>
+        <div>
+            <span class="label">Total Turnovers (Points Off Turnovers):  </span>
+            <span class="display-value">12 (14)</span>
+        </div>
+        <div>
+            <span class="label">Flagrant Fouls:  </span>
+            <span class="display-value">0</span>
+        </div>
+        <div>
+            <span class="label">Technical Fouls:  </span>
+            <span class="display-value">1</span>
+        </div>
+    </div>
+</div>undefinedundefined</div>undefinedundefined</div>undefinedundefined</div>

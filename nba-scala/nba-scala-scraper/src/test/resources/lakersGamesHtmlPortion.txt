@@ -1,0 +1,91 @@
+
+<div class="mod-container mod-table mod-no-header-footer">
+    <div class="mod-content">
+        <table cellspacing="1" cellpadding="3" class="tablehead">
+            <tr class="stathead">
+                <td colspan="9">2016 Regular Season Schedule</td>
+            </tr>
+            <tr class="colhead">
+                <td>OCTOBER</td>
+                <td>OPPONENT</td>
+                <td>RESULT</td>
+                <td>W-L</td>
+                <td align="left" title="Points Leader">HI POINTS</td>
+                <td align="left" title="Rebounds Leader">HI REBOUNDS</td>
+                <td align="left" title="Assists Leader">HI ASSISTS</td>
+            </tr>
+            <tr class="oddrow team-46-16">
+                <td>Wed, Oct 28</td>
+                <td>
+                    <ul class="game-schedule">
+                        <li class="game-status">vs</li>
+                        <li class="team-logo-small logo-nba-small">
+                            <a href="http://espn.go.com/nba/team/_/name/min/minnesota-timberwolves">
+                                <img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/Min.png&h=80&w=80">
+                                </a>
+                            </li>
+                            <li class="team-name">
+                                <a href="http://espn.go.com/nba/team/_/name/min/minnesota-timberwolves">Minnesota</a>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul class="game-schedule">
+                            <li class="game-status loss">
+                                <span class="redfont">L</span>
+                            </li>
+                            <li class="score">
+                                <a href="/nba/recap?id=400827904">112-111</a>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>0-1</td>
+                    <td colspan="1">
+                        <a href="http://espn.go.com/nba/player/_/id/4011/ricky-rubio">R. Rubio</a> 28
+                    </td>
+                    <td colspan="1">
+                        <a href="http://espn.go.com/nba/player/_/id/3136195/karl-anthony-towns">K. Towns</a> 12
+                    </td>
+                    <td colspan="1">
+                        <a href="http://espn.go.com/nba/player/_/id/4011/ricky-rubio">R. Rubio</a> 14
+                    </td>
+                </tr>
+                <tr class="evenrow team-46-23">
+                    <td>Fri, Oct 30</td>
+                    <td>
+                        <ul class="game-schedule">
+                            <li class="game-status">@</li>
+                            <li class="team-logo-small logo-nba-small">
+                                <a href="http://espn.go.com/nba/team/_/name/sac/sacramento-kings">
+                                    <img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/scoreboard/Sac.png&h=80&w=80">
+                                    </a>
+                                </li>
+                                <li class="team-name">
+                                    <a href="http://espn.go.com/nba/team/_/name/sac/sacramento-kings">Sacramento</a>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="game-schedule">
+                                <li class="game-status loss">
+                                    <span class="redfont">L</span>
+                                </li>
+                                <li class="score">
+                                    <a href="/nba/recap?id=400827918">132-114</a>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>0-2</td>
+                        <td colspan="1">
+                            <a href="http://espn.go.com/nba/player/_/id/2528426/jordan-clarkson">J. Clarkson</a> 22
+                        </td>
+                        <td colspan="1">
+                            <a href="http://espn.go.com/nba/player/_/id/4258/demarcus-cousins">D. Cousins</a> 11
+                        </td>
+                        <td colspan="1">
+                            <a href="http://espn.go.com/nba/player/_/id/3026/rajon-rondo">R. Rondo</a> 8
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>

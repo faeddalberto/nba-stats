@@ -1,0 +1,158 @@
+<div class="mod-container mod-open-list mod-teams-list-medium mod-no-footer">
+    <div class="mod-header stathead">
+        <h4>Atlantic</h4>
+    </div>
+    <div class="mod-content">
+        <ul class="medium-logos">
+            <li class="first">
+                <div class="logo-nba-medium nba-medium-bos">
+                    <h5 >
+                        <a href="http://espn.go.com/nba/team/_/name/bos/boston-celtics" class="bi">Boston Celtics</a>
+                    </h5>
+                    <!-- nbtest here a -->
+                    <!-- begin slice icon -->
+                    <span class="webicon" style="display:none;">
+                        <span id="nba_bos_clubhouseslice" class="hslice" style="display: none;">
+                            <span style="display: none;" class="entry-title">ESPN: Celtics</span>
+                            <a rel="entry-content" href="http://espn.go.com/nba/webslices/clubhouse?team=bos" style="display: none;"></a>
+                            <span style="display: none;">
+Updates every
+                                <span class="ttl">60</span> minute(s)
+
+                            </span>
+                        </span>
+                        <a href="#" onclick="javascript:window.external.AddToFavoritesBar('http://espn.go.com/nba/webslices/clubhouse?team=bos#nba_bos_clubhouseslice', 'ESPN\: Celtics', 'slice'); anTrackLink (this,'espn','webslice_nba_bos_clubhouseslice_add','ESPN\: Celtics');">
+                            <img src="http://a.espncdn.com/webslices/icons/12x12.png" alt="IE8 Web Slice" class="sliceicon-img" />
+                        </a>
+                    </span>
+                    <!-- end slice icon -->
+                    <span>
+                        <a href="/nba/teams/stats?team=bos">Stats</a> |
+                        <a href="/nba/teams/schedule?team=bos">Schedule</a> |
+                        <a href="/nba/teams/roster?team=bos">Roster</a> |
+                        <a href="/nba/teams/depth?team=bos">Depth Chart</a>
+                    </span>
+                </div>
+            </li>
+            <li class="alt">
+                <div class="logo-nba-medium nba-medium-bkn">
+                    <h5 >
+                        <a href="http://espn.go.com/nba/team/_/name/bkn/brooklyn-nets" class="bi">Brooklyn Nets</a>
+                    </h5>
+                    <!-- nbtest here a -->
+                    <!-- begin slice icon -->
+                    <span class="webicon" style="display:none;">
+                        <span id="nba_bkn_clubhouseslice" class="hslice" style="display: none;">
+                            <span style="display: none;" class="entry-title">ESPN: Nets</span>
+                            <a rel="entry-content" href="http://espn.go.com/nba/webslices/clubhouse?team=bkn" style="display: none;"></a>
+                            <span style="display: none;">
+Updates every
+                                <span class="ttl">60</span> minute(s)
+
+                            </span>
+                        </span>
+                        <a href="#" onclick="javascript:window.external.AddToFavoritesBar('http://espn.go.com/nba/webslices/clubhouse?team=bkn#nba_bkn_clubhouseslice', 'ESPN\: Nets', 'slice'); anTrackLink (this,'espn','webslice_nba_bkn_clubhouseslice_add','ESPN\: Nets');">
+                            <img src="http://a.espncdn.com/webslices/icons/12x12.png" alt="IE8 Web Slice" class="sliceicon-img" />
+                        </a>
+                    </span>
+                    <!-- end slice icon -->
+                    <span>
+                        <a href="/nba/teams/stats?team=bkn">Stats</a> |
+                        <a href="/nba/teams/schedule?team=bkn">Schedule</a> |
+                        <a href="/nba/teams/roster?team=bkn">Roster</a> |
+                        <a href="/nba/teams/depth?team=bkn">Depth Chart</a>
+                    </span>
+                </div>
+            </li>
+            <li class="">
+                <div class="logo-nba-medium nba-medium-nyk">
+                    <h5 >
+                        <a href="http://espn.go.com/nba/team/_/name/ny/new-york-knicks" class="bi">New York Knicks</a>
+                    </h5>
+                    <!-- nbtest here a -->
+                    <!-- begin slice icon -->
+                    <span class="webicon" style="display:none;">
+                        <span id="nba_nyk_clubhouseslice" class="hslice" style="display: none;">
+                            <span style="display: none;" class="entry-title">ESPN: Knicks</span>
+                            <a rel="entry-content" href="http://espn.go.com/nba/webslices/clubhouse?team=nyk" style="display: none;"></a>
+                            <span style="display: none;">
+Updates every
+                                <span class="ttl">60</span> minute(s)
+
+                            </span>
+                        </span>
+                        <a href="#" onclick="javascript:window.external.AddToFavoritesBar('http://espn.go.com/nba/webslices/clubhouse?team=nyk#nba_nyk_clubhouseslice', 'ESPN\: Knicks', 'slice'); anTrackLink (this,'espn','webslice_nba_nyk_clubhouseslice_add','ESPN\: Knicks');">
+                            <img src="http://a.espncdn.com/webslices/icons/12x12.png" alt="IE8 Web Slice" class="sliceicon-img" />
+                        </a>
+                    </span>
+                    <!-- end slice icon -->
+                    <span>
+                        <a href="/nba/teams/stats?team=nyk">Stats</a> |
+                        <a href="/nba/teams/schedule?team=nyk">Schedule</a> |
+                        <a href="/nba/teams/roster?team=nyk">Roster</a> |
+                        <a href="/nba/teams/depth?team=nyk">Depth Chart</a>
+                    </span>
+                </div>
+            </li>
+            <li class="alt">
+                <div class="logo-nba-medium nba-medium-phi">
+                    <h5 >
+                        <a href="http://espn.go.com/nba/team/_/name/phi/philadelphia-76ers" class="bi">Philadelphia 76ers</a>
+                    </h5>
+                    <!-- nbtest here a -->
+                    <!-- begin slice icon -->
+                    <span class="webicon" style="display:none;">
+                        <span id="nba_phi_clubhouseslice" class="hslice" style="display: none;">
+                            <span style="display: none;" class="entry-title">ESPN: 76ers</span>
+                            <a rel="entry-content" href="http://espn.go.com/nba/webslices/clubhouse?team=phi" style="display: none;"></a>
+                            <span style="display: none;">
+Updates every
+                                <span class="ttl">60</span> minute(s)
+
+                            </span>
+                        </span>
+                        <a href="#" onclick="javascript:window.external.AddToFavoritesBar('http://espn.go.com/nba/webslices/clubhouse?team=phi#nba_phi_clubhouseslice', 'ESPN\: 76ers', 'slice'); anTrackLink (this,'espn','webslice_nba_phi_clubhouseslice_add','ESPN\: 76ers');">
+                            <img src="http://a.espncdn.com/webslices/icons/12x12.png" alt="IE8 Web Slice" class="sliceicon-img" />
+                        </a>
+                    </span>
+                    <!-- end slice icon -->
+                    <span>
+                        <a href="/nba/teams/stats?team=phi">Stats</a> |
+                        <a href="/nba/teams/schedule?team=phi">Schedule</a> |
+                        <a href="/nba/teams/roster?team=phi">Roster</a> |
+                        <a href="/nba/teams/depth?team=phi">Depth Chart</a>
+                    </span>
+                </div>
+            </li>
+            <li class="last">
+                <div class="logo-nba-medium nba-medium-tor">
+                    <h5 >
+                        <a href="http://espn.go.com/nba/team/_/name/tor/toronto-raptors" class="bi">Toronto Raptors</a>
+                    </h5>
+                    <!-- nbtest here a -->
+                    <!-- begin slice icon -->
+                    <span class="webicon" style="display:none;">
+                        <span id="nba_tor_clubhouseslice" class="hslice" style="display: none;">
+                            <span style="display: none;" class="entry-title">ESPN: Raptors</span>
+                            <a rel="entry-content" href="http://espn.go.com/nba/webslices/clubhouse?team=tor" style="display: none;"></a>
+                            <span style="display: none;">
+Updates every
+                                <span class="ttl">60</span> minute(s)
+
+                            </span>
+                        </span>
+                        <a href="#" onclick="javascript:window.external.AddToFavoritesBar('http://espn.go.com/nba/webslices/clubhouse?team=tor#nba_tor_clubhouseslice', 'ESPN\: Raptors', 'slice'); anTrackLink (this,'espn','webslice_nba_tor_clubhouseslice_add','ESPN\: Raptors');">
+                            <img src="http://a.espncdn.com/webslices/icons/12x12.png" alt="IE8 Web Slice" class="sliceicon-img" />
+                        </a>
+                    </span>
+                    <!-- end slice icon -->
+                    <span>
+                        <a href="/nba/teams/stats?team=tor">Stats</a> |
+                        <a href="/nba/teams/schedule?team=tor">Schedule</a> |
+                        <a href="/nba/teams/roster?team=tor">Roster</a> |
+                        <a href="/nba/teams/depth?team=tor">Depth Chart</a>
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
