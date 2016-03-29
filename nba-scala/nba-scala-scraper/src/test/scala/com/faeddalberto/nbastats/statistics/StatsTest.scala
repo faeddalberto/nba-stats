@@ -1,7 +1,7 @@
 package com.faeddalberto.nbastats.statistics
 
 import com.faeddalberto.nbastats.domain.statistics._
-import com.faeddalberto.nbastats.domain.{Position, Player, PlayerMatchStats}
+import com.faeddalberto.nbastats.domain.{Player, PlayerMatchStats, Position}
 import org.scalatest.{FlatSpec, Matchers}
 
 class StatsTest extends FlatSpec with Matchers{

@@ -1,5 +1,7 @@
 package com.faeddalberto.nbastats.teamfinder
 
+import com.faeddalberto.nbastats.domain.Conference.EASTERN
+import com.faeddalberto.nbastats.domain.Division._
 import com.faeddalberto.nbastats.domain.Team
 import com.faeddalberto.nbastats.provider.StubTeamDocumentProvider
 import org.scalatest.{FlatSpec, Matchers}
@@ -18,7 +20,8 @@ class TeamFactoryTest extends FlatSpec with Matchers {
     val teamNames = new ArrayBuffer[String]
     for (elem <- teams) {
       teamNames += elem.name
-      elem.division shouldBe "Atlantic"
+      elem.division shouldBe Atlantic
+      elem.conference shouldBe EASTERN
     }
 
 

@@ -2,7 +2,8 @@ package com.faeddalberto.nbastats.statsfinder
 
 import com.faeddalberto.nbastats.domain.statistics._
 import com.faeddalberto.nbastats.domain.{Position, Game, Player, PlayerMatchStats}
-import com.faeddalberto.nbastats.provider.DocumentProvider
+import com.faeddalberto.nbastats.playerfinder.PlayerFactory
+import com.faeddalberto.nbastats.provider.{HtmlDocumentProvider, DocumentProvider}
 import org.jsoup.nodes.{Document, Element}
 import org.jsoup.select.Elements
 
@@ -12,12 +13,14 @@ import scala.util.control.Breaks._
 
 class StatsFactory(documentProvider: DocumentProvider) {
 
-  val team_stats = "TEAM"
-  val player_name = "name"
-  val did_not_play = "dnp"
-  val player_stats = "td"
-  val players_stats = "tr"
-  val base_url = "http://espn.go.com/nba/boxscore?gameId=%s"
+  private val team_stats = "TEAM"
+  private val player_name = "name"
+  private val did_not_play = "dnp"
+  private val player_stats = "td"
+  private val players_stats = "tr"
+
+  private val base_url = "http://espn.go.com/nba/boxscore?gameId=%s"
+  private val playerfactory = new PlayerFactory(new HtmlDocumentProvider())
 
   def getGamesStats(games :Array[Game]) :mutable.Map[Game, ArrayBuffer[PlayerMatchStats]] = {
     val allGamesStats = mutable.Map[Game, ArrayBuffer[PlayerMatchStats]]()

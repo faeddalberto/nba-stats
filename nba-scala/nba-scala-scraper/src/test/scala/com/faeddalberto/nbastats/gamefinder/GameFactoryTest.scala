@@ -1,14 +1,14 @@
 package com.faeddalberto.nbastats.gamefinder
 
-import com.faeddalberto.nbastats.domain.Team
+import com.faeddalberto.nbastats.domain.{Division, Team}
 import com.faeddalberto.nbastats.provider.StubGamesDocumentProvider
 import org.scalatest.{FlatSpec, Matchers}
 
 class GameFactoryTest extends FlatSpec with Matchers {
 
   "GameFactory.getAllGamesOfTheYear" should "return a map containing matches played by each team" in {
-    val bulls :Team = new Team("Chicago Bulls", "Central", "http://espn.go.com/nba/team/_/name/chi/chicago-bulls", "chi", "chicago-bulls")
-    val lakers :Team = new Team("Los Angeles Lakers", "Pacific", "http://espn.go.com/nba/team/_/name/LAL/los-angeles-lakers", "LAL", "los-angeles-lakers")
+    val bulls :Team = new Team("Chicago Bulls", Division.withName("Central"), "http://espn.go.com/nba/team/_/name/chi/chicago-bulls", "chi", "chicago-bulls")
+    val lakers :Team = new Team("Los Angeles Lakers", Division.withName("Pacific"), "http://espn.go.com/nba/team/_/name/LAL/los-angeles-lakers", "LAL", "los-angeles-lakers")
 
     val gameFactory = new GameFactory(StubGamesDocumentProvider)
     val bullsAndLakersGames = gameFactory.getAllTeamsSeasonGamesResults(Array[Team](bulls, lakers), 2016)
@@ -19,7 +19,7 @@ class GameFactoryTest extends FlatSpec with Matchers {
   }
 
   "GameFactory.getSeasonGamesForTeam" should "return an array containing matches played by bulls" in {
-    val bulls :Team = new Team("Chicago Bulls", "Central", "http://espn.go.com/nba/team/_/name/chi/chicago-bulls", "chi", "chicago-bulls")
+    val bulls :Team = new Team("Chicago Bulls", Division.withName("Central"), "http://espn.go.com/nba/team/_/name/chi/chicago-bulls", "chi", "chicago-bulls")
 
     val gameFactory = new GameFactory(StubGamesDocumentProvider)
     val bullsGames = gameFactory.getSeasonGamesResultsForTeam(bulls, 2016)

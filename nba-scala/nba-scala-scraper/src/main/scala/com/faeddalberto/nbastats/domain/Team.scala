@@ -1,16 +1,20 @@
 package com.faeddalberto.nbastats.domain
 
-class Team (val name :String, val division :String, val url :String, val prefix_1 :String, val prefix_2 :String) {
+import com.faeddalberto.nbastats.domain.Conference.Conference
+import com.faeddalberto.nbastats.domain.Division.Division
 
-  override def toString = {
-    "name: %s, division: %s, url: %s, prefix_1: %s, prefix_2: %s".format(name, division, url, prefix_1, prefix_2)
-  }
+class Team (val name :String, val division :Division, val url :String, val prefix_1 :String, val prefix_2 :String) {
+
+  val conference :Conference = Conference(division)
+
+  override def toString = s"Team($conference, $name, $division, $url, $prefix_1, $prefix_2)"
 
   def canEqual(other: Any): Boolean = other.isInstanceOf[Team]
 
   override def equals(other: Any): Boolean = other match {
     case that: Team =>
       (that canEqual this) &&
+        conference == that.conference &&
         name == that.name &&
         division == that.division &&
         url == that.url &&
@@ -20,7 +24,7 @@ class Team (val name :String, val division :String, val url :String, val prefix_
   }
 
   override def hashCode(): Int = {
-    val state = Seq(name, division, url, prefix_1, prefix_2)
+    val state = Seq(conference, name, division, url, prefix_1, prefix_2)
     state.map(_.hashCode()).foldLeft(0)((a, b) => 31 * a + b)
   }
 }

@@ -12,11 +12,11 @@ import scala.util.control.Breaks._
 
 class GameFactory(documentProvider :DocumentProvider) {
 
-  val unordered_info_list = "ul li"
-  val team_games = "tr[class~=(?i)(oddrow|evenrow)]"
-  val game_data = "td"
-  val base_url = "http://espn.go.com/nba/team/schedule/_/name/%s/year/%d/%s"
-  val dtf :DateTimeFormatter = DateTimeFormat forPattern "yyyy MMM dd"
+  private val unordered_info_list = "ul li"
+  private val team_games = "tr[class~=(?i)(oddrow|evenrow)]"
+  private val game_data = "td"
+  private val base_url = "http://espn.go.com/nba/team/schedule/_/name/%s/year/%d/%s"
+  private val dtf :DateTimeFormatter = DateTimeFormat forPattern "yyyy MMM dd"
 
   def getAllTeamsSeasonGamesResults(teams :Array[Team], year :Int) :mutable.Map[Team, ArrayBuffer[Game]] = {
     val allGames = mutable.Map[Team, ArrayBuffer[Game]]()

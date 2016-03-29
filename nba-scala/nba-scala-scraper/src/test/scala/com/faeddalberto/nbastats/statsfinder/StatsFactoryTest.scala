@@ -1,7 +1,7 @@
 package com.faeddalberto.nbastats.statsfinder
 
 import com.faeddalberto.nbastats.domain.statistics._
-import com.faeddalberto.nbastats.domain.{Position, Player, Game}
+import com.faeddalberto.nbastats.domain.{Game, Player, Position}
 import com.faeddalberto.nbastats.provider.StubGameStatsDocumentProvider
 import org.joda.time.LocalDate
 import org.scalatest.{FlatSpec, Matchers}

@@ -1,6 +1,6 @@
 package com.faeddalberto.nbastats.teamfinder
 
-import com.faeddalberto.nbastats.domain.Team
+import com.faeddalberto.nbastats.domain.{Division, Team}
 import com.faeddalberto.nbastats.provider.DocumentProvider
 import org.jsoup.select.Elements
 
@@ -8,11 +8,11 @@ import scala.collection.mutable.ArrayBuffer
 
 class TeamFactory(documentProvider :DocumentProvider) {
 
-  val teams_by_division = "div.mod-teams-list-medium";
-  val division = "div.mod-header h4"
-  val teams_list = "ul.medium-logos li"
-  val team_page_link = "h5 a"
-  val url = "http://espn.go.com/nba/teams"
+  private val teams_by_division = "div.mod-teams-list-medium";
+  private val division = "div.mod-header h4"
+  private val teams_list = "ul.medium-logos li"
+  private val team_page_link = "h5 a"
+  private val url = "http://espn.go.com/nba/teams"
 
   def getAllTeams:ArrayBuffer[Team] = {
     val doc = documentProvider.provideDocument(url)
@@ -45,7 +45,7 @@ class TeamFactory(documentProvider :DocumentProvider) {
 
       val prefixes = getPrefixes(url, 2)
 
-      teams += new Team(teamPageLink.text, division, url, prefixes(0), prefixes(1))
+      teams += new Team(teamPageLink.text, Division.withName(division), url, prefixes(0), prefixes(1))
     }
     teams
 
