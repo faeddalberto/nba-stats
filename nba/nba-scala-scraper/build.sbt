@@ -1,11 +1,11 @@
-
 organization := "org.faeddalberto"
 
-name := "NBA-Scala_scraper"
+name := "nba-scala-scraper"
 
-version := "1.0.0"
+version := "1.0"
 
 scalaVersion := "2.11.7"
+crossPaths := false
 
 libraryDependencies ++= Seq(
   "org.jsoup" %  "jsoup" % "1.8.3",

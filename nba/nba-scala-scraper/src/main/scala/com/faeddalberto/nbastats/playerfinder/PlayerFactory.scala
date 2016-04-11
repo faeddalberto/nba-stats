@@ -5,10 +5,8 @@ import com.faeddalberto.nbastats.domain.{Bio, Player, Position}
 import com.faeddalberto.nbastats.provider.DocumentProvider
 import org.joda.time.LocalDate
 import org.joda.time.format.{DateTimeFormat, DateTimeFormatter}
-import org.jsoup.nodes.{Document, Element}
+import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
-
-import scala.collection.SortedSet
 
 class PlayerFactory(var documentProvider :DocumentProvider) {
 
@@ -25,7 +23,6 @@ class PlayerFactory(var documentProvider :DocumentProvider) {
   private val num_and_position = "li.first"
   private val current_team = "li.last a"
   private val player_bio = "div.player-bio"
-  private val player_stats = "div.mod-player-stats table"
   private val baseUrl = "http://espn.go.com/nba/player/_/id/%d/%s"
 
   def getPlayer(playerLink :String) :Player = {
@@ -35,11 +32,11 @@ class PlayerFactory(var documentProvider :DocumentProvider) {
     val playerId = playerLink.split("/").last toInt
     val name = getPlayerName(doc)
     val playerBio = doc select player_bio
-    val bio = getGeneralInfo(playerBio)
+    //val bio = getGeneralInfo(playerBio)
     val number = getNumber(playerBio)
     val position = getPosition(playerBio)
     val currentTeam = getCurrentTeam(playerBio)
-    //val career = getPlayerContracts(doc select player_stats get(0))
+    val statsDoc = documentProvider.provideDocument(baseUrl format (playerId, name))
 
     new Player(playerId, name, currentTeam, position)
   }
@@ -75,19 +72,6 @@ class PlayerFactory(var documentProvider :DocumentProvider) {
       returnValue = false
     }
     returnValue
-  }
-
-  private def getPlayerContracts(playerStats :Element) :SortedSet[String] = {
-    val playerContracts = playerStats select player_contracts iterator
-    var career = SortedSet[String]()
-    while (playerContracts hasNext) {
-      val yearAndTeam = playerContracts.next()
-      val year = yearAndTeam.select("tr").select("td").get(0).text
-      val team = yearAndTeam.select("tr").select("td li.team-name a").text
-      career += year + " | " + team
-    }
-
-    career
   }
 
   private def getNumber(generalInfo :Elements) :String = {
