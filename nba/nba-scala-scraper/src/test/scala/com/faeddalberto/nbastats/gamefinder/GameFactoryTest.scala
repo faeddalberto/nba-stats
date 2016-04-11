@@ -11,7 +11,7 @@ class GameFactoryTest extends FlatSpec with Matchers {
     val lakers :Team = new Team("Los Angeles Lakers", Division.withName("Pacific"), "http://espn.go.com/nba/team/_/name/LAL/los-angeles-lakers", "LAL", "los-angeles-lakers")
 
     val gameFactory = new GameFactory(StubGamesDocumentProvider)
-    val bullsAndLakersGames = gameFactory.getAllTeamsSeasonGamesResults(Array[Team](bulls, lakers), 2016)
+    val bullsAndLakersGames = gameFactory.getAllTeamsSeasonGamesResults(Array[Team](bulls, lakers), 2015)
 
     bullsAndLakersGames.size should equal (2)
     bullsAndLakersGames(bulls).length should equal (3)
@@ -24,8 +24,8 @@ class GameFactoryTest extends FlatSpec with Matchers {
     val gameFactory = new GameFactory(StubGamesDocumentProvider)
     val bullsGames = gameFactory.getSeasonGamesResultsForTeam(bulls, 2016)
 
-    bullsGames(0).toString shouldBe "matchId: 400578302, date: 2015-10-29 | NY Knicks [80] - [104] Chicago Bulls"
-    bullsGames(1).toString shouldBe "matchId: 400578314, date: 2015-10-31 | Cleveland [108] - [114] Chicago Bulls"
-    bullsGames(2).toString shouldBe "matchId: 400578327, date: 2015-11-01 | Minnesota [105] - [106] Chicago Bulls"
+    bullsGames(0).toString shouldBe "matchId: 400578302, season: 2016 Regular [2015-10-29] | NY Knicks [80] - [104] Chicago Bulls"
+    bullsGames(1).toString shouldBe "matchId: 400578314, season: 2016 Regular [2015-10-31] | Cleveland [108] - [114] Chicago Bulls"
+    bullsGames(2).toString shouldBe "matchId: 400578327, season: 2016 Regular [2015-11-01] | Minnesota [105] - [106] Chicago Bulls"
   }
 }

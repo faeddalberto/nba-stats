@@ -7,7 +7,7 @@ CREATE TYPE IF NOT EXISTS position (
     name varchar
 );
 
-CREATE TABLE IF NOT EXISTS player (
+CREATE TABLE IF NOT EXISTS player_career (
     id varchar,
     year int,
     team varchar,

@@ -2,12 +2,12 @@ package com.faeddalberto.nbastats.domain
 
 import org.joda.time.LocalDate
 
-class Game private(val matchId :String, val date :LocalDate,
+class Game private(val matchId :String, val season :Int, val seasonType :String, val date :LocalDate,
                     val homeTeam :String, val homeTeamScore :Int,
                     val visitTeam :String, val visitTeamScore :Int) {
 
   override def toString = {
-    s"matchId: $matchId, date: $date | $homeTeam [$homeTeamScore] - [$visitTeamScore] $visitTeam"
+    s"matchId: $matchId, season: $season $seasonType [$date] | $homeTeam [$homeTeamScore] - [$visitTeamScore] $visitTeam"
   }
 
   def canEqual(other: Any): Boolean = other.isInstanceOf[Game]
@@ -16,6 +16,8 @@ class Game private(val matchId :String, val date :LocalDate,
     case that: Game =>
       (that canEqual this) &&
         matchId == that.matchId &&
+        season == that.season &&
+        seasonType == that.seasonType &&
         date == that.date &&
         homeTeam == that.homeTeam &&
         homeTeamScore == that.homeTeamScore &&
@@ -25,20 +27,20 @@ class Game private(val matchId :String, val date :LocalDate,
   }
 
   override def hashCode(): Int = {
-    val state = Seq(matchId, date, homeTeam, homeTeamScore, visitTeam, visitTeamScore)
+    val state = Seq(matchId, season, seasonType, date, homeTeam, homeTeamScore, visitTeam, visitTeamScore)
     state.map(_.hashCode()).foldLeft(0)((a, b) => 31 * a + b)
   }
 }
 
 object Game {
 
-    def apply(matchId :String, date :LocalDate,
+    def apply(matchId :String, season :Int, seasonType :String, date :LocalDate,
                 homeTeam :String, homeTeamScore :Int,
                 visitTeam :String, visitTeamScore :Int) :Game = {
-      new Game(matchId, date, homeTeam, homeTeamScore, visitTeam, visitTeamScore)
+      new Game(matchId, season, seasonType, date, homeTeam, homeTeamScore, visitTeam, visitTeamScore)
     }
 
-    def apply(matchId :String, date :LocalDate, isHomeTeam :Boolean, mainTeamName :String,
+    def apply(matchId :String, season :Int, seasonType :String, date :LocalDate, isHomeTeam :Boolean, mainTeamName :String,
                       otherTeamName :String, score :String, won :Boolean) :Game = {
 
     var homeTeamName :String = null
@@ -74,6 +76,6 @@ object Game {
       }
     }
 
-    new Game(matchId, date, homeTeamName, homeTeamScore, visitTeamName, visitTeamScore)
+    new Game(matchId, season, seasonType, date, homeTeamName, homeTeamScore, visitTeamName, visitTeamScore)
   }
 }

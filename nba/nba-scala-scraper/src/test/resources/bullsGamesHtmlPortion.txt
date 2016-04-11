@@ -1,3 +1,12 @@
+<div class="mod-page-tabs mod-thirdnav-tabs" style="padding-top: 3px;">
+<ul class="ui-tabs">
+<li class="shiftleft">
+<li class="active">
+<a href="http://espn.go.com/nba/team/schedule/_/name/chi/year/2009/chicago-bulls">Schedule Regular</a>
+</li>
+<li class="">
+</ul>
+</div>
 <div class="mod-container mod-table mod-no-header-footer">
     <div class="mod-content">
         <table cellspacing="1" cellpadding="3" class="tablehead">

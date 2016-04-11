@@ -15,7 +15,7 @@ class StatsTest extends FlatSpec with Matchers{
     val threePoints = ("3pt", "3-5")
     val freeThrows = ("ft", "2-4")
 
-    val player = new Player(id = 234543, name = "D. Rose", team = "Chicago Bulls", role = Position.withName("PG"))
+    val player = new Player(id = 234543, 2015, name = "D. Rose", team = "Chicago Bulls", role = Position.withName("PG"))
 
     val stats = Stats.init()
     stats.set(mins _1, mins _2)

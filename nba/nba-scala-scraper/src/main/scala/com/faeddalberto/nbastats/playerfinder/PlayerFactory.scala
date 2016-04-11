@@ -34,11 +34,12 @@ class PlayerFactory(var documentProvider :DocumentProvider) {
     val playerBio = doc select player_bio
     //val bio = getGeneralInfo(playerBio)
     val number = getNumber(playerBio)
+    val season = 2015
     val position = getPosition(playerBio)
     val currentTeam = getCurrentTeam(playerBio)
     val statsDoc = documentProvider.provideDocument(baseUrl format (playerId, name))
 
-    new Player(playerId, name, currentTeam, position)
+    new Player(playerId, season, name, currentTeam, position)
   }
 
   private def getPlayerName(doc :Document) :String = {

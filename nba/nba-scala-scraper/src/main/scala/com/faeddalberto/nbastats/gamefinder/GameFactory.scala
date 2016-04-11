@@ -15,7 +15,8 @@ class GameFactory(documentProvider :DocumentProvider) {
   private val unordered_info_list = "ul li"
   private val team_games = "tr[class~=(?i)(oddrow|evenrow)]"
   private val game_data = "td"
-  private val base_url = "http://espn.go.com/nba/team/schedule/_/name/%s/year/%d/%s"
+
+  private val base_url_season = "http://espn.go.com/nba/team/schedule/_/name/%s/year/%d/seasontype/%d/%s";
   private val dtf :DateTimeFormatter = DateTimeFormat forPattern "yyyy MMM dd"
 
   def getAllTeamsSeasonGamesResults(teams :Array[Team], year :Int) :mutable.Map[Team, ArrayBuffer[Game]] = {
@@ -29,25 +30,33 @@ class GameFactory(documentProvider :DocumentProvider) {
 
   def getSeasonGamesResultsForTeam(team :Team, year :Int) :ArrayBuffer[Game] = {
     var teamGames = ArrayBuffer[Game]()
-    val doc = documentProvider.provideDocument(base_url format (team.prefix_1, year, team.prefix_2))
 
-    breakable {
-      val games = doc select team_games iterator
+    for (i <- 2 to 3) {
+      val doc = documentProvider.provideDocument(base_url_season format(team.prefix_1, year, i, team.prefix_2))
 
-      while (games hasNext) {
-        val game = games next
-        val data = game select game_data
+      val seasonType :String = doc.select ("ul.ui-tabs li.active").text.split(" ")(1)
 
-        val date = getGameDate(year, data)
-        if (date.isEqual(today) || date.isAfter(today)) break
+      breakable {
 
-        val isHomeTeam = if (text(data, 1, 0) equals "vs") true else false
-        val otherTeamName = text(data, 1, 2)
-        val score = text(data, 2, 1).split(" ")(0)
-        val matchId = data.get(2).select(unordered_info_list).get(1).select("a").attr("href").split("id=")(1)
-        val won = if (text(data, 2, 0) equals "W") true else false
+        if ((i == 3) && seasonType.equals("Regular")) break()
 
-        teamGames += Game(matchId, date, isHomeTeam, team.name, otherTeamName, score, won)
+        val games = doc select team_games iterator
+
+        while (games hasNext) {
+          val game = games next
+          val data = game select game_data
+
+          val date = getGameDate(year, data)
+          if (date.isEqual(today) || date.isAfter(today)) break
+
+          val isHomeTeam = if (text(data, 1, 0) equals "vs") true else false
+          val otherTeamName = text(data, 1, 2)
+          val score = text(data, 2, 1).split(" ")(0)
+          val matchId = data.get(2).select(unordered_info_list).get(1).select("a").attr("href").split("id=")(1)
+          val won = if (text(data, 2, 0) equals "W") true else false
+
+          teamGames += Game(matchId, year, seasonType, date, isHomeTeam, team.name, otherTeamName, score, won)
+        }
       }
     }
     teamGames

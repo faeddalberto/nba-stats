@@ -41,24 +41,24 @@ class StatsFactory(documentProvider: DocumentProvider) {
 
     for (i <- 0 to 3) {
       val team = if (i == 0 || i == 1) aGame.visitTeam else aGame.homeTeam
-      gameStats ++= playersStatsByTeam(bodies.get(i) select players_stats, aGame.matchId, team)
+      gameStats ++= playersStatsByTeam(bodies.get(i) select players_stats, aGame, team)
     }
 
     gameStats
   }
 
-  private def playersStatsByTeam(stats :Elements, matchId :String, team :String) :ArrayBuffer[PlayerMatchStats] = {
+  private def playersStatsByTeam(stats :Elements, game :Game, team :String) :ArrayBuffer[PlayerMatchStats] = {
     val statsIt = stats iterator
     var playersGameStats = ArrayBuffer[PlayerMatchStats]()
     breakable {
       while(statsIt hasNext) {
-        playersGameStats += playerStats(statsIt.next select player_stats, matchId, team)
+        playersGameStats += playerStats(statsIt.next select player_stats, game, team)
       }
     }
     playersGameStats
   }
 
-  private def playerStats(dataElems :Elements, matchId: String, team :String) :PlayerMatchStats = {
+  private def playerStats(dataElems :Elements, game: Game, team :String) :PlayerMatchStats = {
     val statsIt = dataElems iterator
     var player :Player = null
     var stats :Stats = Stats.init()
@@ -69,25 +69,25 @@ class StatsFactory(documentProvider: DocumentProvider) {
       if (stat.text equals team_stats) break
 
       if (stat.className equals player_name) {
-        player = getPlayer(stat, team)
+        player = getPlayer(stat, team, game.season)
       } else if (stat.className equals did_not_play) {
         stats = Stats didNotPlay
       } else {
         stats set(stat className, stat text)
       }
 
-      playerGameStats = new PlayerMatchStats(player, matchId, stats)
+      playerGameStats = new PlayerMatchStats(player, game.matchId, stats)
     }
 
     playerGameStats
   }
 
-  private def getPlayer(td :Element, team :String) :Player = {
+  private def getPlayer(td :Element, team :String, season :Int) :Player = {
     val a = td select "a"
     val position = td.select("span") text
     val playerId = a.attr("href").split("/").last toInt
     val name = a text
 
-    new Player(playerId, name, team, Position.withName(position))
+    new Player(playerId, season, name, team, Position.withName(position))
   }
 }

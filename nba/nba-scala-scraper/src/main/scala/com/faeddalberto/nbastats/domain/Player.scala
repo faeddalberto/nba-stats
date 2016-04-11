@@ -2,10 +2,10 @@ package com.faeddalberto.nbastats.domain
 
 import com.faeddalberto.nbastats.domain.Position.Position
 
-class Player (val id :Int, val name :String, val team :String, val role :Position) {
+class Player (val id :Int, val season :Int, val name :String, val team :String, val role :Position) {
 
   override def toString = {
-    s"Id: $id, Name: $name, Team: $team, Role: $role"
+    s"Id: $id, season: $season, Name: $name, Team: $team, Role: $role"
   }
 
   def canEqual(other: Any): Boolean = other.isInstanceOf[Player]

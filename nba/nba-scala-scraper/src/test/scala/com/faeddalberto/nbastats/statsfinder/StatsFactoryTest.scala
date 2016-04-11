@@ -10,7 +10,7 @@ class StatsFactoryTest extends FlatSpec with Matchers {
 
   "StatsFactory.getGamesStats" should "return a map with games and stats for each player" in {
     val statsFactory = new StatsFactory(StubGameStatsDocumentProvider)
-    val game :Game = Game("400578302", new LocalDate(2015,10,29), "NY Knicks", 80, "Chicago Bulls", 104)
+    val game :Game = Game("400578302", 2016, "Regular", new LocalDate(2015,10,29), "NY Knicks", 80, "Chicago Bulls", 104)
 
     val stats = statsFactory.getGamesStats(Array[Game](game))
 
@@ -20,7 +20,7 @@ class StatsFactoryTest extends FlatSpec with Matchers {
 
     val jNoah = playersStats(0)
 
-    jNoah.player shouldEqual new Player(id = 3224, name = "J. Noah", team = "Chicago Bulls", role = Position.withName("C"))
+    jNoah.player shouldEqual new Player(id = 3224, season = 2015, name = "J. Noah", team = "Chicago Bulls", role = Position.withName("C"))
     jNoah.stats. minutesPlayed shouldEqual new MinutesPlayed(20)
     jNoah.stats. fieldGoals shouldEqual new FieldGoals().made(1).attempted(4)
     jNoah.stats. threePoints shouldEqual new ThreePoints().made(0).attempted(0)
