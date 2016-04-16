@@ -4,10 +4,17 @@ object Position extends Enumeration {
 
     type Position = Value
 
-    val POINT_GUARD = Value(1, "PG")
-    val SHOOTING_GUARD = Value(2, "SG")
-    val SMALL_FORWARD = Value(3, "SF")
-    val POWER_FORWARD = Value(4, "PF")
-    val CENTER = Value(5, "C")
+    val GUARD = Value("G")
+    val POINT_GUARD = Value("PG")
+    val SHOOTING_GUARD = Value("SG")
+    val GUARD_FOWRARD = Value("GF")
+
+    val FORWARD = Value("F")
+    val POWER_FORWARD = Value("PF")
+    val SMALL_FORWARD = Value("SF")
+    val FORWARD_CENTER = Value("FC")
+    val CENTER = Value("C")
+
+
 
 }
