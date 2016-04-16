@@ -16,10 +16,9 @@ class Stats private (var minutesPlayed :MinutesPlayed,
                       var points: Points
                       ) {
 
-
-
     def set(statName :String, statValue :String) = statName match {
     case "min" =>
+
       minutesPlayed = new MinutesPlayed(statValue toInt)
     case "fg" =>
       val text = statValue split "-"
@@ -52,6 +51,7 @@ class Stats private (var minutesPlayed :MinutesPlayed,
       points = new Points(statValue toInt)
   }
 
+  override def toString = s"Stats($minutesPlayed, $fieldGoals, $threePoints, $freeThrows, $offensiveRebounds, $defensiveRebounds, $rebounds, $assists, $steals, $blocks, $turnovers, $personalFauls, $plusMinus, $points)"
 }
 
 object Stats {
