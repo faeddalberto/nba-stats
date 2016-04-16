@@ -7,7 +7,7 @@ class Team (val name :String, val division :Division, val url :String, val prefi
 
   val conference :Conference = Conference(division)
 
-  override def toString = s"Team($conference, $name, $division, $url, $prefix_1, $prefix_2)"
+  override def toString = s"$name, $conference, $division, $url, $prefix_1, $prefix_2"
 
   def canEqual(other: Any): Boolean = other.isInstanceOf[Team]
 
