@@ -38,9 +38,12 @@ class StatsFactory(documentProvider: DocumentProvider) {
 
     val table = doc select "table.mod-data"
     val bodies = table select "tbody"
+    val teamNames = doc select "div.table-caption"
+    val homeTeam = getTeam(teamNames, 0)
+    val visitorTeam = getTeam(teamNames, 1)
 
     for (i <- 0 to 3) {
-      val team = if (i == 0 || i == 1) aGame.visitTeam else aGame.homeTeam
+      val team = if (i == 0 || i == 1) homeTeam  else visitorTeam
       gameStats ++= playersStatsByTeam(bodies.get(i) select players_stats, aGame, team)
     }
 
@@ -70,7 +73,7 @@ class StatsFactory(documentProvider: DocumentProvider) {
 
       if (stat.className equals player_name) {
         player = getPlayer(stat, team, game.season)
-      } else if (stat.className equals did_not_play) {
+      } else if (stat.className.equals(did_not_play) || stat.text().startsWith("--")) {
         stats = Stats didNotPlay
       } else {
         stats set(stat className, stat text)
@@ -84,10 +87,14 @@ class StatsFactory(documentProvider: DocumentProvider) {
 
   private def getPlayer(td :Element, team :String, season :Int) :Player = {
     val a = td select "a"
-    val position = td.select("span") text
+    var position = td.select("span") text
     val playerId = a.attr("href").split("/").last toInt
     val name = a text
 
     new Player(playerId, season, name, team, Position.withName(position))
+  }
+
+  private def getTeam(teamNames: Elements, team :Int) :String = {
+    teamNames.get(team).text().split(" ") (0)
   }
 }

@@ -15,6 +15,8 @@ class GameFactory(documentProvider :DocumentProvider) {
   private val unordered_info_list = "ul li"
   private val team_games = "tr[class~=(?i)(oddrow|evenrow)]"
   private val game_data = "td"
+  private val postponed = "Postponed"
+  private val canceled = "Canceled"
 
   private val base_url_season = "http://espn.go.com/nba/team/schedule/_/name/%s/year/%d/seasontype/%d/%s";
   private val dtf :DateTimeFormatter = DateTimeFormat forPattern "yyyy MMM dd"
@@ -51,19 +53,28 @@ class GameFactory(documentProvider :DocumentProvider) {
 
           val isHomeTeam = if (text(data, 1, 0) equals "vs") true else false
           val otherTeamName = text(data, 1, 2)
-          val score = text(data, 2, 1).split(" ")(0)
-          val matchId = data.get(2).select(unordered_info_list).get(1).select("a").attr("href").split("id=")(1)
-          val won = if (text(data, 2, 0) equals "W") true else false
+          if (isPostponedOrCanceled(data, 2)) {
+            //skip this game
+          } else {
+            val score = text(data, 2, 1).split(" ")(0)
+            val matchId = data.get(2).select(unordered_info_list).get(1).select("a").attr("href").split("id=")(1)
+            val won = if (text(data, 2, 0) equals "W") true else false
 
-          teamGames += Game(matchId, year, seasonType, date, isHomeTeam, team.name, otherTeamName, score, won)
+            teamGames += Game(matchId, year, seasonType, date, isHomeTeam, team.name, otherTeamName, score, won)
+          }
         }
       }
+
     }
     teamGames
   }
 
   private def text(columns :Elements, colIndex :Int, listIndex :Int) :String = {
     columns.get(colIndex).select(unordered_info_list).get(listIndex).text
+  }
+
+  private def isPostponedOrCanceled(columns :Elements, columnIndex:Int) :Boolean = {
+    columns.get(columnIndex).text.equals(postponed) || columns.get(columnIndex).text.equals(canceled)
   }
 
   private def getGameDate(year :Int, columns :Elements) :LocalDate = {
