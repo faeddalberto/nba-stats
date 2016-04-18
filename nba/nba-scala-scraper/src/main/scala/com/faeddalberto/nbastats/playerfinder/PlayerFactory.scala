@@ -1,11 +1,9 @@
 package com.faeddalberto.nbastats.playerfinder
 
-import com.faeddalberto.nbastats.domain.Position.Position
-import com.faeddalberto.nbastats.domain.{Bio, Player, Position}
+import com.faeddalberto.nbastats.domain.PlayerBio
 import com.faeddalberto.nbastats.provider.DocumentProvider
 import org.joda.time.LocalDate
 import org.joda.time.format.{DateTimeFormat, DateTimeFormatter}
-import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
 
 class PlayerFactory(var documentProvider :DocumentProvider) {
@@ -17,52 +15,29 @@ class PlayerFactory(var documentProvider :DocumentProvider) {
   private val key = "span"
   private val general_info = "ul.general-info"
   private val born_and_drafted = "ul.player-metadata li"
-  private val height_and_weight_wt = "li:not(.first):not(.last)"
-  private val height_and_weight_wot = "li.last"
   private val player_with_team = "li:not(.first):not(.last)"
-  private val num_and_position = "li.first"
-  private val current_team = "li.last a"
   private val player_bio = "div.player-bio"
-  private val baseUrl = "http://espn.go.com/nba/player/_/id/%d/%s"
+  private val baseUrl = "http://espn.go.com/nba/player/_/id/%d/"
 
-  def getPlayer(playerLink :String) :Player = {
+  def getPlayerBio(playerId :Int) :PlayerBio = {
 
-    val doc = documentProvider.provideDocument(playerLink)
+    val doc = documentProvider.provideDocument(baseUrl format (playerId))
 
-    val playerId = playerLink.split("/").last toInt
-    val name = getPlayerName(doc)
+    val fullName = doc select player_name text
     val playerBio = doc select player_bio
-    //val bio = getGeneralInfo(playerBio)
-    val number = getNumber(playerBio)
-    val season = 2015
-    val position = getPosition(playerBio)
-    val currentTeam = getCurrentTeam(playerBio)
-    val statsDoc = documentProvider.provideDocument(baseUrl format (playerId, name))
+    val bio = getGeneralInfo(playerId, fullName, playerBio)
 
-    new Player(playerId, season, name, currentTeam, position)
+    bio
   }
 
-  private def getPlayerName(doc :Document) :String = {
-    doc select player_name text
-  }
-
-  private def getGeneralInfo(playerBio :Elements) :Bio = {
-    val generalInfo = playerBio select general_info
-    var height = "0"
-    var weight = "0"
-    if (playerWithoutTeam(generalInfo)) {
-      height = generalInfo.select(height_and_weight_wot).text.split(",")(0).trim
-      weight = generalInfo.select(height_and_weight_wot).text.split(",")(1).trim
-    } else {
-      height = generalInfo.select(height_and_weight_wt).text.split(",")(0).trim
-      weight = generalInfo.select(height_and_weight_wt).text.split(",")(1).trim
-    }
+  private def getGeneralInfo(id :Int, name :String, playerBio :Elements) :PlayerBio = {
 
     val bornAndDrafted = getBornAndDrafted(playerBio)
     val dob = getDob(bornAndDrafted)
     val country = getCountry(bornAndDrafted)
-    val drafted = bornAndDrafted.get(1).text
-    Bio(dob, country, height, weight, drafted)
+    var drafted = bornAndDrafted.get(1).text
+    if (drafted.split(",").size != 2) drafted = "n.a."
+    PlayerBio(id, name, dob, country, drafted)
   }
 
   def playerWithoutTeam(generalInfo :Elements) :Boolean = {
@@ -75,31 +50,6 @@ class PlayerFactory(var documentProvider :DocumentProvider) {
     returnValue
   }
 
-  private def getNumber(generalInfo :Elements) :String = {
-    val numAndPos = generalInfo.select(num_and_position).text.split(" ")
-    if(numAndPos.size == 1)
-      "-"
-    else {
-      numAndPos(0).replace("#", "")
-    }
-  }
-
-  private def getPosition(generalInfo :Elements) :Position = {
-    val numAndPos = generalInfo.select(num_and_position).text.split(" ")
-    if (numAndPos.size == 1) {
-      Position.withName(generalInfo.select(num_and_position).text.split(" ")(0))
-    } else {
-      Position.withName(generalInfo.select(num_and_position).text.split(" ")(1))
-    }
-  }
-
-  private def getCurrentTeam(playerBio :Elements) :String = {
-    val currentTeam = playerBio select current_team
-    if (currentTeam == null)
-      "n.a."
-    else
-      currentTeam text
-  }
 
   private def getBornAndDrafted(playerBio :Elements) :Elements = {
     val bornAndDrafted = playerBio select born_and_drafted
@@ -109,11 +59,14 @@ class PlayerFactory(var documentProvider :DocumentProvider) {
   }
 
   private def getDob(bornAndDrafted :Elements) :LocalDate = {
-    dtf.parseLocalDate(bornAndDrafted.get(0).text.split("in")(0).trim)
+    dtf.parseLocalDate(bornAndDrafted.get(0).text.split("in")(0).split("\\(")(0).trim)
   }
 
   private def getCountry(bornAndDrafted: Elements) :String = {
-    val countryAndAge = bornAndDrafted.get(0).text.split("in")(1)
-    countryAndAge.split("\\(")(0).trim
+    val countryAndAge = bornAndDrafted.get(0).text.split("in")
+    if (countryAndAge.size == 1)
+      return "n.a."
+    else
+      countryAndAge(1).split("\\(")(0).trim
   }
 }
