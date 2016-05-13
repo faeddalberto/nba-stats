@@ -1,37 +1,32 @@
 CREATE KEYSPACE IF NOT EXISTS nba WITH REPLICATION = {'class':'SimpleStrategy', 'replication_factor': 2};
 
-USE KEYSPACE nba;
-
-CREATE TYPE IF NOT EXISTS position (
-    short_name text,
-    long_name text
-);
-
-CREATE TYPE IF NOT EXISTS stat (
+CREATE TYPE IF NOT EXISTS nba.made_attempted_stat (
     made int,
     attempted int
-)
+);
 
-CREATE TABLE IF NOT EXISTS player (
-    player_id varchar,
-    name varchar,
+CREATE TABLE IF NOT EXISTS nba.player (
+    player_id uuid,
+    name text,
     dob timestamp,
-    country varchar,
-    drafted varchar,
+    country text,
+    drafted text,
     PRIMARY KEY (player_id)
 );
 
-CREATE TABLE IF NOT EXISTS player_by_country (
-    country varchar,
-    player_id varchar,
-    name varchar,
-    dob timestamp,
-    country varchar,
-    drafted varchar,
-    PRIMARY KEY (country, player_id)
-);
+CREATE TABLE IF NOT EXISTS nba.player_career_by_name (
+    name text,
+    year int,
+    team text,
+    player_id uuid,
+    country text static,
+    dob timestamp static,
+    drafted text static,
+    role text static,
+    PRIMARY KEY (name, year, team, player_id)
+) WITH CLUSTERING ORDER BY (year DESC, team ASC, player_id ASC);
 
-CREATE TABLE IF NOT EXISTS team (
+CREATE TABLE IF NOT EXISTS nba.team (
     team_id text,
     name text,
     conference text,
@@ -39,7 +34,7 @@ CREATE TABLE IF NOT EXISTS team (
     PRIMARY KEY (team_id)
 );
 
-CREATE TABLE IF NOT EXISTS teams_by_conference_division (
+CREATE TABLE IF NOT EXISTS nba.teams_by_conference_division (
     conference text,
     division text,
     team_id text,
@@ -47,96 +42,111 @@ CREATE TABLE IF NOT EXISTS teams_by_conference_division (
     PRIMARY KEY (conference, division, team_id)
 );
 
-CREATE TABLE IF NOT EXISTS player_career (
-    player_name varchar,
+CREATE TABLE IF NOT EXISTS nba.team_roster_by_year (
     year int,
     team text,
-    player_id text,
-    role frozen<position>,
-    PRIMARY KEY (player_name, year, team, player_id)
-) WITH CLUSTERING ORDER BY (year DESC, team ASC);
-
-
-CREATE TABLE IF NOT EXISTS team_roster_per_year (
-    team text,
-    year int,
-    player_id text,
+    player_id uuid,
     player_name text,
-    role frozer<position>,
-    PRIMARY KEY (team, year, player_id)
-) WITH CLUSTERING ORDER BY (year DESC, player_id ASC);
+    role text,
+    PRIMARY KEY ((year, team), player_id)
+);
 
-
-CREATE TABLE IF NOT EXISTS game (
-    game_id text,
+CREATE TABLE IF NOT EXISTS nba.game (
+    game_id uuid,
     season int,
-    season_type text,
     date timestamp,
+    season_type text,
     home_team text,
     home_team_score int,
     visitor_team text,
     visitor_team_score int,
-    PRIMARY KEY (id, season, season_type, date)
-) WITH CLUSTERING KEY ORDER BY (season DESC, season_type DESC, date ASC);
+    PRIMARY KEY (game_id)
+);
 
-CREATE TABLE IF NOT EXISTS games_by_season_teams (
+CREATE TABLE IF NOT EXISTS nba.game_by_season_teams (
     season int,
     home_team text,
     visitor_team text,
     date timestamp,
-    game_id text,
+    game_id uuid,
     home_team_score int,
     visitor_team_score int,
     season_type text,
     PRIMARY KEY((season, home_team, visitor_team), date, game_id)
-) WITH CLUSTERING ORDER BY (date DESC, game_id ASC);
+) WITH CLUSTERING ORDER BY (date ASC, game_id ASC);
 
-CREATE TABLE IF NOT EXISTS player_stats_by_game (
-    game_id text,
-    player_id text,
-    season int,
+CREATE TABLE IF NOT EXISTS nba.player_stats_by_game (
+    game_id uuid,
+    player_id uuid,
     date timestamp,
+    season int,
     player_team text,
     opponent_team text,
     mins_played int,
     player_name text,
-    fg frozen<stat>,
-    tp frozen<stat>,
-    ft frozen<stat>,
+    fg_ma frozen<made_attempted_stat>,
+    tp_ma frozen<made_attempted_stat>,
+    ft_ma frozen<made_attempted_stat>,
     off_reb int,
     def_reb int,
     tot_reb int,
     ast int,
-    st int,
-    bs int,
-    to int,
+    stl int,
+    bks int,
+    tov int,
     pf int,
     pm int,
-    pts int
-    PRIMARY KEY (game_id, date, player_id)
-) WITH CLUSTERING ORDER BY (date DESC, player_id ASC);
+    pts int,
+    PRIMARY KEY (game_id, player_id)
+);
 
-CREATE TABLE IF NOT EXISTS player_stats_by_opponent (
+CREATE TABLE IF NOT EXISTS nba.player_stats_by_opponent (
     opponent_team text,
     player_name text,
     player_team text,
     season int,
     date timestamp,
-    played_id text,
-    game_id text,
+    game_id uuid,
+    player_id uuid,
     mins_played int,
-    fg frozen<stat>,
-    tp frozen<stat>,
-    ft frozen<stat>,
+    fg_ma frozen<made_attempted_stat>,
+    tp_ma frozen<made_attempted_stat>,
+    ft_ma frozen<made_attempted_stat>,
     off_reb int,
     def_reb int,
     tot_reb int,
     ast int,
-    st int,
-    bs int,
-    to int,
+    stl int,
+    bks int,
+    tov int,
     pf int,
     pm int,
-    pts int
-    PRIMARY KEY ((opponent_team, player_name, player_team), season, date, player_id, game_id)
-) WITH CLUSTERING ORDER BY (season DESC, date DESC, player_id ASC, game_id ASC);
+    pts int,
+    PRIMARY KEY ((opponent_team, player_name), player_team, season, date, game_id, player_id)
+) WITH CLUSTERING ORDER BY (player_team ASC, season DESC, date DESC, game_id ASC, player_id ASC);
+
+CREATE TABLE IF NOT EXISTS nba.stats_by_season (
+    season int,
+    month int,
+    player_team text,
+    player_name text,
+    opponent_team text,
+    game_id uuid,
+    player_id uuid,
+    date timestamp,
+    mins_played int,
+    fg_ma frozen<made_attempted_stat>,
+    tp_ma frozen<made_attempted_stat>,
+    ft_ma frozen<made_attempted_stat>,
+    off_reb int,
+    def_reb int,
+    tot_reb int,
+    ast int,
+    stl int,
+    bks int,
+    tov int,
+    pf int,
+    pm int,
+    pts int,
+    PRIMARY KEY (season, month, player_team, player_name, opponent_team, game_id, player_id)
+);
