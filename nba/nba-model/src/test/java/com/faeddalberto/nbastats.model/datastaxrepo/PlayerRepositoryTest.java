@@ -57,9 +57,9 @@ public class PlayerRepositoryTest extends CassandraIntegration {
 
         mapper.save(player);
 
-        List<Player> savedPlayer = playerRepo.getPlayerById(player.getPlayerId());
+        Player savedPlayer = playerRepo.getPlayerById(player.getPlayerId());
 
-        assertTrue(player.equals(savedPlayer.get(0)));
+        assertTrue(player.equals(savedPlayer));
     }
 
     @Test
@@ -70,16 +70,16 @@ public class PlayerRepositoryTest extends CassandraIntegration {
         Player player = new Player(UUID.randomUUID(), dob, "Derrick Rose", "USA", "23rd in 2006, selected by Chicago");
 
         mapper.save(player);
-        List<Player> savedPlayer = playerRepo.getPlayerById(player.getPlayerId());
-        assertTrue(player.equals(savedPlayer.get(0)));
+        Player savedPlayer = playerRepo.getPlayerById(player.getPlayerId());
+        assertTrue(player.equals(savedPlayer));
 
         player.setDraftedInfo("1st pick in 2009, selected by Chicago Bulls");
         player.setCountry("Chicago, Illinois");
 
         mapper.save(player);
-        List<Player> updatedPlayer = playerRepo.getPlayerById(player.getPlayerId());
-        assertEquals(player.getCountry(), updatedPlayer.get(0).getCountry());
-        assertEquals(player.getDraftedInfo(), updatedPlayer.get(0).getDraftedInfo());
+        Player updatedPlayer = playerRepo.getPlayerById(player.getPlayerId());
+        assertEquals(player.getCountry(), updatedPlayer.getCountry());
+        assertEquals(player.getDraftedInfo(), updatedPlayer.getDraftedInfo());
     }
 
     @Test
@@ -92,8 +92,8 @@ public class PlayerRepositoryTest extends CassandraIntegration {
         mapper.save(player);
         mapper.delete(player.getPlayerId());
 
-        List<Player> retrievedPlayer = playerRepo.getPlayerById(player.getPlayerId());
-        assertTrue(retrievedPlayer.isEmpty());
+        Player retrievedPlayer = playerRepo.getPlayerById(player.getPlayerId());
+        assertTrue(retrievedPlayer == null);
     }
 
     @Test

@@ -30,7 +30,7 @@ public class PlayerRepository {
         return players.all();
     }
 
-    public List<Player> getPlayerById(UUID userId) throws Exception {
+    public Player getPlayerById(UUID userId) throws Exception {
 
         mappingManager = new MappingManager(cassandraConfig.session().getObject());
 
@@ -38,6 +38,6 @@ public class PlayerRepository {
 
         Result<Player> players = playerAccessor.getPlayerById(userId);
 
-        return players.all();
+        return players.one();
     }
 }
