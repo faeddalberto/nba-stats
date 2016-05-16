@@ -1,0 +1,83 @@
+id, season, season type, date, home team, home team score, visit team, visit team score
+400827888,2015-2016,Regular,2015-10-27,Detroit,94,Atlanta Hawks,106
+400827906,2015-2016,Regular,2015-10-29,NY Knicks,101,Atlanta Hawks,112
+400827913,2015-2016,Regular,2015-10-30,Atlanta Hawks,97,Charlotte,94
+400827926,2015-2016,Regular,2015-11-01,Charlotte,92,Atlanta Hawks,94
+400827942,2015-2016,Regular,2015-11-03,Miami,92,Atlanta Hawks,98
+400827949,2015-2016,Regular,2015-11-04,Atlanta Hawks,101,Brooklyn,87
+400827968,2015-2016,Regular,2015-11-06,New Orleans,115,Atlanta Hawks,121
+400827973,2015-2016,Regular,2015-11-07,Atlanta Hawks,114,Washington,99
+400827988,2015-2016,Regular,2015-11-09,Minnesota,107,Atlanta Hawks,117
+400828004,2015-2016,Regular,2015-11-11,Atlanta Hawks,106,New Orleans,98
+400828016,2015-2016,Regular,2015-11-13,Atlanta Hawks,106,Boston,93
+400828035,2015-2016,Regular,2015-11-15,Utah,96,Atlanta Hawks,97
+400828046,2015-2016,Regular,2015-11-17,Atlanta Hawks,90,Brooklyn,88
+400828056,2015-2016,Regular,2015-11-18,Atlanta Hawks,103,Sacramento,97
+400828078,2015-2016,Regular,2015-11-21,Atlanta Hawks,109,Cleveland,97
+400828097,2015-2016,Regular,2015-11-24,Atlanta Hawks,121,Boston,97
+400828109,2015-2016,Regular,2015-11-25,Atlanta Hawks,99,Minnesota,95
+400828120,2015-2016,Regular,2015-11-27,Memphis,101,Atlanta Hawks,116
+400828129,2015-2016,Regular,2015-11-28,Atlanta Hawks,108,San Antonio,88
+400828143,2015-2016,Regular,2015-11-30,Atlanta Hawks,106,Oklahoma City,100
+400828159,2015-2016,Regular,2015-12-02,Toronto,86,Atlanta Hawks,96
+400828173,2015-2016,Regular,2015-12-04,Atlanta Hawks,100,Los Angeles,87
+400828215,2015-2016,Regular,2015-12-09,Dallas,95,Atlanta Hawks,98
+400828218,2015-2016,Regular,2015-12-10,Atlanta Hawks,107,Oklahoma City,94
+400828234,2015-2016,Regular,2015-12-12,San Antonio,78,Atlanta Hawks,103
+400828247,2015-2016,Regular,2015-12-14,Miami,88,Atlanta Hawks,100
+400828263,2015-2016,Regular,2015-12-16,Atlanta Hawks,127,Philadelphia,106
+400828276,2015-2016,Regular,2015-12-18,Boston,101,Atlanta Hawks,109
+400828294,2015-2016,Regular,2015-12-20,Orlando,100,Atlanta Hawks,103
+400828300,2015-2016,Regular,2015-12-21,Atlanta Hawks,106,Portland,97
+400828316,2015-2016,Regular,2015-12-23,Atlanta Hawks,107,Detroit,100
+400828329,2015-2016,Regular,2015-12-26,Atlanta Hawks,117,NY Knicks,98
+400828346,2015-2016,Regular,2015-12-28,Atlanta Hawks,93,Indiana,87
+400828357,2015-2016,Regular,2015-12-29,Houston,115,Atlanta Hawks,121
+400828393,2015-2016,Regular,2016-01-03,Atlanta Hawks,111,NY Knicks,97
+400828408,2015-2016,Regular,2016-01-05,NY Knicks,101,Atlanta Hawks,107
+400828423,2015-2016,Regular,2016-01-07,Philadelphia,98,Atlanta Hawks,126
+400828438,2015-2016,Regular,2016-01-09,Atlanta Hawks,120,Chicago,105
+400828464,2015-2016,Regular,2016-01-13,Atlanta Hawks,107,Charlotte,84
+400828486,2015-2016,Regular,2016-01-15,Atlanta Hawks,108,Milwaukee,101
+400828489,2015-2016,Regular,2016-01-16,Atlanta Hawks,114,Brooklyn,86
+400828507,2015-2016,Regular,2016-01-18,Atlanta Hawks,98,Orlando,81
+400828526,2015-2016,Regular,2016-01-20,Portland,98,Atlanta Hawks,104
+400828530,2015-2016,Regular,2016-01-21,Atlanta Hawks,91,Sacramento,88
+400828547,2015-2016,Regular,2016-01-23,Atlanta Hawks,98,Phoenix,95
+400828559,2015-2016,Regular,2016-01-25,Denver,105,Atlanta Hawks,119
+400828574,2015-2016,Regular,2016-01-27,Los Angeles,83,Atlanta Hawks,85
+400828579,2015-2016,Regular,2016-01-28,Atlanta Hawks,111,Indiana,92
+400828602,2015-2016,Regular,2016-01-31,Atlanta Hawks,105,Miami,87
+400828610,2015-2016,Regular,2016-02-01,Atlanta Hawks,112,Dallas,97
+400828623,2015-2016,Regular,2016-02-03,Philadelphia,86,Atlanta Hawks,124
+400828637,2015-2016,Regular,2016-02-05,Atlanta Hawks,102,Indiana,96
+400828658,2015-2016,Regular,2016-02-07,Atlanta Hawks,96,Orlando,94
+400828667,2015-2016,Regular,2016-02-08,Orlando,110,Atlanta Hawks,117
+400828683,2015-2016,Regular,2016-02-10,Chicago,90,Atlanta Hawks,113
+400828695,2015-2016,Regular,2016-02-19,Miami,111,Atlanta Hawks,115
+400828706,2015-2016,Regular,2016-02-20,Milwaukee,109,Atlanta Hawks,117
+400828723,2015-2016,Regular,2016-02-22,Golden State,92,Atlanta Hawks,102
+400828752,2015-2016,Regular,2016-02-26,Atlanta Hawks,103,Chicago,88
+400828765,2015-2016,Regular,2016-02-28,Atlanta Hawks,87,Charlotte,76
+400828782,2015-2016,Regular,2016-03-01,Atlanta Hawks,109,Golden State,105
+400828808,2015-2016,Regular,2016-03-04,Los Angeles,77,Atlanta Hawks,106
+400828816,2015-2016,Regular,2016-03-05,Los Angeles,97,Atlanta Hawks,107
+400828834,2015-2016,Regular,2016-03-08,Utah,84,Atlanta Hawks,91
+400828846,2015-2016,Regular,2016-03-10,Atlanta Hawks,104,Toronto,96
+400828861,2015-2016,Regular,2016-03-12,Atlanta Hawks,95,Memphis,83
+400828871,2015-2016,Regular,2016-03-13,Atlanta Hawks,104,Indiana,75
+400828894,2015-2016,Regular,2016-03-16,Detroit,114,Atlanta Hawks,118
+400828902,2015-2016,Regular,2016-03-17,Atlanta Hawks,116,Denver,98
+400828916,2015-2016,Regular,2016-03-19,Atlanta Hawks,109,Houston,97
+400828935,2015-2016,Regular,2016-03-21,Washington,102,Atlanta Hawks,117
+400828943,2015-2016,Regular,2016-03-23,Washington,101,Atlanta Hawks,122
+400828963,2015-2016,Regular,2016-03-25,Atlanta Hawks,101,Milwaukee,90
+400828972,2015-2016,Regular,2016-03-26,Detroit,95,Atlanta Hawks,112
+400828986,2015-2016,Regular,2016-03-28,Chicago,100,Atlanta Hawks,102
+400829000,2015-2016,Regular,2016-03-30,Atlanta Hawks,105,Toronto,97
+400829018,2015-2016,Regular,2016-04-01,Cleveland,108,Atlanta Hawks,110
+400829044,2015-2016,Regular,2016-04-05,Atlanta Hawks,103,Phoenix,90
+400829060,2015-2016,Regular,2016-04-07,Atlanta Hawks,95,Toronto,87
+400829075,2015-2016,Regular,2016-04-09,Atlanta Hawks,118,Boston,107
+400829090,2015-2016,Regular,2016-04-11,Atlanta Hawks,109,Cleveland,94
+400829108,2015-2016,Regular,2016-04-13,Atlanta Hawks,109,Washington,98

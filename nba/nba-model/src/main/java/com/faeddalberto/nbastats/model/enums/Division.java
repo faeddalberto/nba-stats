@@ -21,4 +21,15 @@ public enum Division {
     public String getValue() {
         return value;
     }
+
+    public static Division fromString(String text) {
+        if (text != null) {
+            for (Division division : Division.values()) {
+                if (text.equalsIgnoreCase(division.value)) {
+                    return division;
+                }
+            }
+        }
+        throw new IllegalArgumentException("Cannot map " + text + " to a valid division");
+    }
 }

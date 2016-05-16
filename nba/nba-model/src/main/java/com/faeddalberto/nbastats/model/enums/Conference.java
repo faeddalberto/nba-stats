@@ -14,4 +14,15 @@ public enum Conference {
     public String getValue() {
         return value;
     }
+
+    public static Conference fromString(String text) {
+        if (text != null) {
+            for (Conference conference : Conference.values()) {
+                if (text.equalsIgnoreCase(conference.value)) {
+                    return conference;
+                }
+            }
+        }
+        throw new IllegalArgumentException("Cannot map " + text + " to a valid conference");
+    }
 }

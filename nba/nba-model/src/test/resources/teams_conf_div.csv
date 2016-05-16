@@ -1,0 +1,31 @@
+id, name, conference, division
+bos,Boston Celtics,Eastern Conference,Atlantic Division
+bkn,Brooklyn Nets,Eastern Conference,Atlantic Division
+nyk,New York Knicks,Eastern Conference,Atlantic Division
+phi,Philadelphia 76ers,Eastern Conference,Atlantic Division
+tor,Toronto Raptors,Eastern Conference,Atlantic Division
+gsw,Golden State Warriors,Western Conference,Pacific Division
+lac,Los Angeles Clippers,Western Conference,Pacific Division
+lal,Los Angeles Lakers,Western Conference,Pacific Division
+phx,Phoenix Suns,Western Conference,Pacific Division
+sac,Sacramento Kings,Western Conference,Pacific Division
+chi,Chicago Bulls,Eastern Conference,Central Division
+cle,Cleveland Cavaliers,Eastern Conference,Central Division
+det,Detroit Pistons,Eastern Conference,Central Division
+ind,Indiana Pacers,Eastern Conference,Central Division
+mil,Milwaukee Bucks,Eastern Conference,Central Division
+dal,Dallas Mavericks,Western Conference,Southwest Division
+hou,Houston Rockets,Western Conference,Southwest Division
+mem,Memphis Grizzlies,Western Conference,Southwest Division
+nop,New Orleans Pelicans,Western Conference,Southwest Division
+sas,San Antonio Spurs,Western Conference,Southwest Division
+atl,Atlanta Hawks,Eastern Conference,Southeast Division
+cha,Charlotte Hornets,Eastern Conference,Southeast Division
+mia,Miami Heat,Eastern Conference,Southeast Division
+orl,Orlando Magic,Eastern Conference,Southeast Division
+wsh,Washington Wizards,Eastern Conference,Southeast Division
+den,Denver Nuggets,Western Conference,Northwest Division
+min,Minnesota Timberwolves,Western Conference,Northwest Division
+okc,Oklahoma City Thunder,Western Conference,Northwest Division
+por,Portland Trail Blazers,Western Conference,Northwest Division
+uth,Utah Jazz,Western Conference,Northwest Division

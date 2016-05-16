@@ -14,6 +14,8 @@ import java.util.UUID;
 @Table(value = "game")
 public class Game {
 
+    public Game() {}
+
     public Game(
             UUID gameId,
             int season,
