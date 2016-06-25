@@ -56,7 +56,7 @@ public class StatsTablesLoaderTest extends CassandraIntegration {
         MadeAttemptedStat threePoints = new MadeAttemptedStat(4,6);
         MadeAttemptedStat freeThrows = new MadeAttemptedStat(8,8);
 
-        PlayerStatsByGame playerStatsByGame = new PlayerStatsByGame(gameId, gameDate, playerId, 2014, "Washington Wizards", "New York Knicks", 39, "John Wall", fieldGoals, threePoints, freeThrows, 3, 5, 8, 7, 1, 0, 1, 4, 29, 31);
+        PlayerStatsByGame playerStatsByGame = new PlayerStatsByGame(gameId, gameDate, playerId, 2014, "Washington Wizards", "POINT GUARD", "New York Knicks", 39, "John Wall", fieldGoals, threePoints, freeThrows, 3, 5, 8, 7, 1, 0, 1, 4, 29, 31);
         PlayerStatsByOpponent playerStatsByOpponent = new PlayerStatsByOpponent("New York Knicks", "John Wall", "Washington Wizards", 2014, gameDate, gameId, playerId, 39, fieldGoals, threePoints, freeThrows, 3, 5, 8, 7, 1, 0, 1, 4, 29, 31);
         StatsBySeason statsBySeason = new StatsBySeason(2014, Calendar.MARCH, "Washington Wizards", "John Wall", "New York Knicks", gameId, playerId, gameDate, 39, fieldGoals, threePoints, freeThrows, 3, 5, 8, 7, 1, 0, 1, 4, 29, 31);
 

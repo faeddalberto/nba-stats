@@ -68,7 +68,7 @@ public class GamesStatsFileReader {
         int points = Integer.valueOf(playerStatsSplit[19]);
 
         PlayerStatsByGame playerStatsByGame = new PlayerStatsByGame(
-                gameId, gameDate, playerId, season, playerTeam, getOpponentTeam(Integer.valueOf(playerStatsSplit[0]), playerTeam),
+                gameId, gameDate, playerId, season, playerTeam, playerRole, getOpponentTeam(Integer.valueOf(playerStatsSplit[0]), playerTeam),
                 minutesPlayed, playerName, fieldGoals, threePoints, freeThrows, offRebs, defRebs, totRebs,
                 assists, steals, blocks, turnovers, personalFauls, plusMinus, points);
 

@@ -81,6 +81,7 @@ CREATE TABLE IF NOT EXISTS nba.player_stats_by_game (
     date timestamp,
     season int,
     player_team text,
+    player_role text,
     opponent_team text,
     mins_played int,
     player_name text,

@@ -19,6 +19,7 @@ public class PlayerStatsByGame {
                             UUID playerId,
                             int season,
                             String playerTeam,
+                            String playerRole,
                             String opponentTeam,
                             int minsPlayed,
                             String playerName,
@@ -40,6 +41,7 @@ public class PlayerStatsByGame {
         this.playerId = playerId;
         this.season = season;
         this.playerTeam = playerTeam;
+        this.playerRole = playerRole;
         this.opponentTeam = opponentTeam;
         this.minsPlayed = minsPlayed;
         this.playerName = playerName;
@@ -76,6 +78,9 @@ public class PlayerStatsByGame {
 
     @Column(name = "player_team")
     private String playerTeam;
+
+    @Column(name = "player_role")
+    private String playerRole;
 
     @Column(name = "opponent_team")
     private String opponentTeam;
@@ -166,6 +171,14 @@ public class PlayerStatsByGame {
 
     public void setPlayerTeam(String playerTeam) {
         this.playerTeam = playerTeam;
+    }
+
+    public String getPlayerRole() {
+        return playerRole;
+    }
+
+    public void setPlayerRole(String playerRole) {
+        this.playerRole = playerRole;
     }
 
     public String getOpponentTeam() {
@@ -309,6 +322,7 @@ public class PlayerStatsByGame {
                 Objects.equal(this.playerId, that.playerId) &&
                 Objects.equal(this.season, that.season) &&
                 Objects.equal(this.playerTeam, that.playerTeam) &&
+                Objects.equal(this.playerRole, that.playerRole) &&
                 Objects.equal(this.opponentTeam, that.opponentTeam) &&
                 Objects.equal(this.minsPlayed, that.minsPlayed) &&
                 Objects.equal(this.playerName, that.playerName) &&
@@ -329,7 +343,7 @@ public class PlayerStatsByGame {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(gameId, date, playerId, season, playerTeam, opponentTeam,
+        return Objects.hashCode(gameId, date, playerId, season, playerTeam, playerRole, opponentTeam,
                 minsPlayed, playerName, fieldGoals, threePoints, freeThrows,
                 offensiveRebounds, defensiveRebounds, totalRebounds, assists, steals,
                 blocks, turnovers, personalFauls, plusMinus, points);
@@ -344,6 +358,7 @@ public class PlayerStatsByGame {
                 .add("playerId", playerId)
                 .add("season", season)
                 .add("playerTeam", playerTeam)
+                .add("playerRole", playerRole)
                 .add("opponentTeam", opponentTeam)
                 .add("minsPlayed", minsPlayed)
                 .add("playerName", playerName)

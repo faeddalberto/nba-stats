@@ -42,7 +42,7 @@ public class PlayerStatsByGameRepositoryTest extends CassandraIntegration {
         MadeAttemptedStat ft_ma = new MadeAttemptedStat(5, 10);
         Date gameDate = new GregorianCalendar(2015, 11, 21).getTime();
         PlayerStatsByGame playerStatsByGame = new PlayerStatsByGame(UUID.randomUUID(), gameDate, UUID.randomUUID(), 2016,
-                "Chicago Bulls", "Orlando Magic", 16, "Joakim Noah", fg_ma, threePts_ma, ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
+                "Chicago Bulls", "CENTER", "Orlando Magic", 16, "Joakim Noah", fg_ma, threePts_ma, ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
 
         mapper.save(playerStatsByGame);
 
@@ -60,7 +60,7 @@ public class PlayerStatsByGameRepositoryTest extends CassandraIntegration {
         MadeAttemptedStat ft_ma = new MadeAttemptedStat(5, 10);
         Date gameDate = new GregorianCalendar(2015, 11, 21).getTime();
         PlayerStatsByGame playerStatsByGame = new PlayerStatsByGame(UUID.randomUUID(), gameDate, UUID.randomUUID(), 2016,
-                "Chicago Bulls", "Orlando Magic", 16, "Joakim Noah", fg_ma, threePts_ma, ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
+                "Chicago Bulls", "CENTER", "Orlando Magic", 16, "Joakim Noah", fg_ma, threePts_ma, ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
 
         mapper.save(playerStatsByGame);
 
@@ -78,7 +78,7 @@ public class PlayerStatsByGameRepositoryTest extends CassandraIntegration {
         MadeAttemptedStat ft_ma = new MadeAttemptedStat(5, 10);
         Date gameDate = new GregorianCalendar(2015, 11, 21).getTime();
         PlayerStatsByGame playerStatsByGame = new PlayerStatsByGame(UUID.randomUUID(), gameDate, UUID.randomUUID(), 2016,
-                "Chicago Bulls", "Orlando Magic", 16, "Joakim Noah", fg_ma, threePts_ma, ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
+                "Chicago Bulls", "CENTER", "Orlando Magic", 16, "Joakim Noah", fg_ma, threePts_ma, ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
 
         mapper.save(playerStatsByGame);
 
@@ -110,13 +110,13 @@ public class PlayerStatsByGameRepositoryTest extends CassandraIntegration {
         UUID gameId = UUID.randomUUID();
 
         PlayerStatsByGame noahStatsByGame = new PlayerStatsByGame(gameId, gameDate, UUID.randomUUID(), 2016,
-                "Chicago Bulls", "Orlando Magic", 16, "Joakim Noah", noah_fg_ma, noah_threePts_ma, noah_ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
+                "Chicago Bulls", "CENTER", "Orlando Magic", 16, "Joakim Noah", noah_fg_ma, noah_threePts_ma, noah_ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
 
         MadeAttemptedStat butler_fg_ma = new MadeAttemptedStat(4, 6);
         MadeAttemptedStat butler_threePts_ma = new MadeAttemptedStat(0, 0);
         MadeAttemptedStat butler_ft_ma = new MadeAttemptedStat(5, 10);
         PlayerStatsByGame butlerStatsByGame = new PlayerStatsByGame(gameId, gameDate, UUID.randomUUID(), 2016,
-                "Chicago Bulls", "Orlando Magic", 39, "Jimmy Butler", butler_fg_ma, butler_threePts_ma, butler_ft_ma, 7, 2, 9, 8, 5, 1, 1, 2, 36, 29);
+                "Chicago Bulls", "POINT GUARD", "Orlando Magic", 39, "Jimmy Butler", butler_fg_ma, butler_threePts_ma, butler_ft_ma, 7, 2, 9, 8, 5, 1, 1, 2, 36, 29);
 
         mapper.save(noahStatsByGame);
         mapper.save(butlerStatsByGame);
@@ -140,13 +140,13 @@ public class PlayerStatsByGameRepositoryTest extends CassandraIntegration {
         UUID gameId = UUID.randomUUID();
 
         PlayerStatsByGame noahStatsByGame = new PlayerStatsByGame(gameId, gameDate, UUID.randomUUID(), 2016,
-                "Chicago Bulls", "Orlando Magic", 16, "Joakim Noah", noah_fg_ma, noah_threePts_ma, noah_ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
+                "Chicago Bulls", "CENTER", "Orlando Magic", 16, "Joakim Noah", noah_fg_ma, noah_threePts_ma, noah_ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
 
         MadeAttemptedStat butler_fg_ma = new MadeAttemptedStat(4, 6);
         MadeAttemptedStat butler_threePts_ma = new MadeAttemptedStat(0, 0);
         MadeAttemptedStat butler_ft_ma = new MadeAttemptedStat(5, 10);
         PlayerStatsByGame butlerStatsByGame = new PlayerStatsByGame(gameId, gameDate, UUID.randomUUID(), 2016,
-                "Chicago Bulls", "Orlando Magic", 39, "Jimmy Butler", butler_fg_ma, butler_threePts_ma, butler_ft_ma, 7, 2, 9, 8, 5, 1, 1, 2, 36, 29);
+                "Chicago Bulls", "POINT GUARD", "Orlando Magic", 39, "Jimmy Butler", butler_fg_ma, butler_threePts_ma, butler_ft_ma, 7, 2, 9, 8, 5, 1, 1, 2, 36, 29);
 
         mapper.save(noahStatsByGame);
         mapper.save(butlerStatsByGame);
@@ -175,13 +175,13 @@ public class PlayerStatsByGameRepositoryTest extends CassandraIntegration {
         UUID gameId = UUID.randomUUID();
 
         PlayerStatsByGame noahStatsByGame = new PlayerStatsByGame(gameId, gameDate, UUID.randomUUID(), 2016,
-                "Chicago Bulls", "Orlando Magic", 16, "Joakim Noah", noah_fg_ma, noah_threePts_ma, noah_ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
+                "Chicago Bulls", "CENTER", "Orlando Magic", 16, "Joakim Noah", noah_fg_ma, noah_threePts_ma, noah_ft_ma, 7, 4, 11, 4, 3, 4, 3, 4, 21, 13);
 
         MadeAttemptedStat butler_fg_ma = new MadeAttemptedStat(4, 6);
         MadeAttemptedStat butler_threePts_ma = new MadeAttemptedStat(0, 0);
         MadeAttemptedStat butler_ft_ma = new MadeAttemptedStat(5, 10);
         PlayerStatsByGame butlerStatsByGame = new PlayerStatsByGame(gameId, gameDate, UUID.randomUUID(), 2016,
-                "Chicago Bulls", "Orlando Magic", 39, "Jimmy Butler", butler_fg_ma, butler_threePts_ma, butler_ft_ma, 7, 2, 9, 8, 5, 1, 1, 2, 36, 29);
+                "Chicago Bulls", "POINT GUARD", "Orlando Magic", 39, "Jimmy Butler", butler_fg_ma, butler_threePts_ma, butler_ft_ma, 7, 2, 9, 8, 5, 1, 1, 2, 36, 29);
 
         mapper.save(noahStatsByGame);
         mapper.save(butlerStatsByGame);
