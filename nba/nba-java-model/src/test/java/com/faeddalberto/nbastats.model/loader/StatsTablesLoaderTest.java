@@ -29,9 +29,6 @@ public class StatsTablesLoaderTest extends CassandraIntegration {
     private StatsTablesLoader statsTablesLoader;
 
     @Autowired
-    private CassandraConfig cassandraConfig;
-
-    @Autowired
     private PlayerStatsByGameRepository playerStatsByGameRepository;
 
     @Autowired

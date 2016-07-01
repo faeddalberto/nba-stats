@@ -22,7 +22,7 @@ public class GameStatsFileReaderTest {
         Map<String, Game> games = getGames(classLoader);
         GamesStatsFileReader statsFileReader = new GamesStatsFileReader(players, teams, games);
         Map<String, List<PlayerStatsByGame>> gameStatsMap =
-                statsFileReader.readGamesStatsFiles(classLoader.getResource("2015-2016_season/games-stats").getPath());
+                statsFileReader.readGamesStatsFiles(classLoader.getResource("seasons/2015-2016_season/games-stats").getPath());
 
         assertTrue(gameStatsMap.containsKey("400827888"));
         assertEquals(26, gameStatsMap.get("400827888").size());
@@ -83,16 +83,16 @@ public class GameStatsFileReaderTest {
 
     Map<String, Player> getPlayers(ClassLoader classLoader) throws IOException {
         PlayersFileReader playersFileReader = new PlayersFileReader();
-        return playersFileReader.readPlayerFiles(classLoader.getResource("players").getPath());
+        return playersFileReader.readPlayerFiles(classLoader.getResource("seasons/players").getPath());
     }
 
     Map<String, Team> getTeams(ClassLoader classLoader) throws FileNotFoundException {
         TeamsFileReader teamsFileReader = new TeamsFileReader();
-        return teamsFileReader.readTeamsFile(classLoader.getResource("teams_conf_div.csv").getPath());
+        return teamsFileReader.readTeamsFile(classLoader.getResource("seasons/teams_conf_div.csv").getPath());
     }
 
     Map<String, Game> getGames(ClassLoader classLoader) throws IOException {
         GamesFileReader gamesFileReader = new GamesFileReader(getTeams(classLoader));
-        return gamesFileReader.readGamesFiles(classLoader.getResource("2015-2016_season/games").getPath());
+        return gamesFileReader.readGamesFiles(classLoader.getResource("seasons/2015-2016_season/games").getPath());
     }
 }

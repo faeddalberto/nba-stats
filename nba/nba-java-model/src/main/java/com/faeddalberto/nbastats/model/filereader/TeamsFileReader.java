@@ -26,6 +26,6 @@ public class TeamsFileReader {
     private static Function<String, Team> mapToTeam = (line) -> {
         String[] teamSplit = line.split(",");
 
-        return new Team(teamSplit[0], teamSplit[1], Conference.fromString(teamSplit[2]).name(), Division.fromString(teamSplit[3]).name());
+        return new Team(teamSplit[0], teamSplit[1], Conference.fromString(teamSplit[2]).getValue(), Division.fromString(teamSplit[3]).getValue());
     };
 }

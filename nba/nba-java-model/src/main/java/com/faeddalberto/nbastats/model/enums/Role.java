@@ -21,4 +21,13 @@ public enum Role {
     public String getShortName() {
         return shortName;
     }
+
+    public static Role fromShortName(String shortName) {
+        for (Role role : values()) {
+            if (role.shortName.equals(shortName))
+                return role;
+        }
+
+        throw new IllegalArgumentException("Role " + shortName + " doesn't exist");
+    }
 }

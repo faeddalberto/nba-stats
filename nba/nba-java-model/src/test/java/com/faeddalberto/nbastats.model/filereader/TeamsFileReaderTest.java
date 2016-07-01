@@ -18,7 +18,7 @@ public class TeamsFileReaderTest {
         ClassLoader classLoader = getClass().getClassLoader();
 
         TeamsFileReader teamsFileReader = new TeamsFileReader();
-        Map<String, Team> teamsMap = teamsFileReader.readTeamsFile(classLoader.getResource("teams_conf_div.csv").getPath());
+        Map<String, Team> teamsMap = teamsFileReader.readTeamsFile(classLoader.getResource("seasons/teams_conf_div.csv").getPath());
 
         assertEquals(30, teamsMap.size());
         assertTrue(teamsMap.containsKey("bos"));

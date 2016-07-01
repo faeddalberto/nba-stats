@@ -33,9 +33,6 @@ public class TeamTablesLoaderTest extends CassandraIntegration {
     private TeamTablesLoader teamTablesLoader;
 
     @Autowired
-    private CassandraConfig cassandraConfig;
-
-    @Autowired
     private TeamRepository teamRepository;
 
     @Autowired

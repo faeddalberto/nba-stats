@@ -25,9 +25,6 @@ public class PlayerTablesLoaderTest extends CassandraIntegration {
     private PlayerTablesLoader playerTablesLoader;
 
     @Autowired
-    private CassandraConfig cassandraConfig;
-
-    @Autowired
     private PlayerRepository playerRepo;
 
     @Autowired

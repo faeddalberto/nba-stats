@@ -22,7 +22,7 @@ public class GamesFileReaderTest {
 
         GamesFileReader gamesFileReader =
                 new GamesFileReader(getTeams(classLoader));
-        Map<String, Game> gamesMap = gamesFileReader.readGamesFiles(classLoader.getResource("2015-2016_season/games").getPath());
+        Map<String, Game> gamesMap = gamesFileReader.readGamesFiles(classLoader.getResource("seasons/2015-2016_season/games").getPath());
 
         assertEquals(82, gamesMap.size());
         assertTrue(gamesMap.containsKey("400827888"));
@@ -120,7 +120,7 @@ public class GamesFileReaderTest {
 
     Map<String, Team> getTeams(ClassLoader classLoader) throws FileNotFoundException {
         TeamsFileReader teamsFileReader = new TeamsFileReader();
-        return teamsFileReader.readTeamsFile(classLoader.getResource("teams_conf_div.csv").getPath());
+        return teamsFileReader.readTeamsFile(classLoader.getResource("seasons/teams_conf_div.csv").getPath());
     }
 
 }

@@ -16,7 +16,7 @@ public class PlayersFileReaderTest {
         ClassLoader classLoader = getClass().getClassLoader();
 
         PlayersFileReader playersFileReader = new PlayersFileReader();
-        Map<String, Player> playerMap = playersFileReader.readPlayerFiles(classLoader.getResource("players").getPath());
+        Map<String, Player> playerMap = playersFileReader.readPlayerFiles(classLoader.getResource("seasons/players").getPath());
 
         assertEquals(26, playerMap.size());
         assertTrue(playerMap.containsKey("1994"));
