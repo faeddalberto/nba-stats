@@ -8,12 +8,12 @@ import com.faeddalberto.nbastats.model.loader.PlayerTablesLoader;
 import com.faeddalberto.nbastats.model.loader.StatsTablesLoader;
 import com.faeddalberto.nbastats.model.loader.TeamTablesLoader;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
@@ -46,7 +46,13 @@ public class Loader {
             throw new IllegalStateException("Please provide seasons and root folder path: [yyyy-yyyy+1 yyyy-yyyy+1 /root/to/seasons]");
         }
 
-        new Loader().getArguments(args).loadSeasons();
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("spring-config.xml");
+
+        Loader loader = context.getBean(Loader.class);
+        loader.getArguments(args).loadSeasons();
+
+        System.exit(0);
     }
 
     protected Loader getArguments(String[] args) {
@@ -68,11 +74,13 @@ public class Loader {
         Map<String, Team> teams = seasonFilesReader.readTeams(rootPath);
         Map<String, Player> players = seasonFilesReader.readPlayers(rootPath);
 
+        Map<String, Game> allSeasonsGames = new HashMap<>();
+        Map<String, List<PlayerStatsByGame>> allSeasonsStats = new HashMap<>();
         for (String season : seasons) {
-            Map<String, Game> seasonGames = seasonFilesReader.readSeasonGames(rootPath, season, teams);
-            Map<String, List<PlayerStatsByGame>> seasonGamesStats = seasonFilesReader.readSeasonGamesStats(rootPath, season, players, teams, seasonGames);
-            loadSeason(teams, players, seasonGames, seasonGamesStats);
+            allSeasonsGames.putAll(seasonFilesReader.readSeasonGames(rootPath, season, teams));
+            allSeasonsStats.putAll(seasonFilesReader.readSeasonGamesStats(rootPath, season, players, teams, allSeasonsGames));
         }
+        loadSeason(teams, players, allSeasonsGames, allSeasonsStats);
     }
 
     protected void loadSeason(
@@ -189,7 +197,7 @@ public class Loader {
                 StatsBySeason statsBySeason =
                         new StatsBySeason(
                                 psg.getSeason(),
-                                psg.getDate().getMonth(),
+                                getMonth(psg.getDate()),
                                 psg.getPlayerTeam(),
                                 psg.getPlayerName(),
                                 psg.getOpponentTeam(),
@@ -214,6 +222,14 @@ public class Loader {
                 statsTablesLoader.insertStatsBatch(psg, playerStatsByOpponent, statsBySeason);
             }
         }
+    }
+
+    private int getMonth(Date gameDate) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(gameDate);
+        int month = cal.get(Calendar.MONTH) + 1;
+
+        return month;
     }
 
     public List<String> getSeasons() {

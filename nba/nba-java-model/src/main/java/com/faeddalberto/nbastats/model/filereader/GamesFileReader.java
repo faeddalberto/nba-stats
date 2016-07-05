@@ -52,7 +52,7 @@ public class GamesFileReader {
     private static Function<String, Pair<String, Game>> mapToGame = (line) -> {
         String[] gameSplit = line.split(",");
         int season = Integer.valueOf(gameSplit[1].split("-")[1]);
-        SeasonType seasonType = SeasonType.fromString(gameSplit[2]);
+        SeasonType seasonType = SeasonType.fromString(gameSplit[2].equals("Postseason") ? "Playoffs" : "Regular Season");
         Date gameDate = getGameDate(gameSplit);
         String homeTeam = getTeam(gameSplit[4]);
         int homeTeamScore = Integer.valueOf(gameSplit[5]);
