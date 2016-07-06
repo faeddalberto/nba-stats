@@ -21,7 +21,7 @@ public class PlayerStatsByGameRepository {
 
     public List<PlayerStatsByGame> getAllGamesStats() throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByGameAccessor accessor = mappingManager.createAccessor(PlayerStatsByGameAccessor.class);
 
@@ -32,7 +32,7 @@ public class PlayerStatsByGameRepository {
 
     public List<PlayerStatsByGame> getGameStats(UUID gameId) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByGameAccessor accessor = mappingManager.createAccessor(PlayerStatsByGameAccessor.class);
 
@@ -43,7 +43,7 @@ public class PlayerStatsByGameRepository {
 
     public PlayerStatsByGame getPlayerGameStats(UUID gameId, UUID playerId) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByGameAccessor accessor = mappingManager.createAccessor(PlayerStatsByGameAccessor.class);
 
@@ -54,7 +54,7 @@ public class PlayerStatsByGameRepository {
 
     public void deleteGameStats(UUID gameId) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByGameAccessor accessor = mappingManager.createAccessor(PlayerStatsByGameAccessor.class);
 
@@ -63,7 +63,7 @@ public class PlayerStatsByGameRepository {
 
     public void deletePlayerGameStats(UUID gameId, UUID playerId) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByGameAccessor accessor = mappingManager.createAccessor(PlayerStatsByGameAccessor.class);
 

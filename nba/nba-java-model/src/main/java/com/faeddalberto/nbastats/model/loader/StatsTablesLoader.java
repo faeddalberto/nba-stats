@@ -22,8 +22,7 @@ public class StatsTablesLoader {
 
     public void insertStatsBatch(PlayerStatsByGame playerStatsByGame, PlayerStatsByOpponent playerStatsByOpponent, StatsBySeason statsBySeason) throws Exception {
         BatchStatement batchStatement = new BatchStatement();
-        Session session = cassandraConfig.session().getObject();
-        MappingManager mappingManager = new MappingManager(session);
+        MappingManager mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByGameAccessor playerStatsByGameAccessor = mappingManager.createAccessor(PlayerStatsByGameAccessor.class);
         PlayerStatsByOpponentAccessor playerStatsByOpponentAccessor = mappingManager.createAccessor(PlayerStatsByOpponentAccessor.class);
@@ -37,6 +36,6 @@ public class StatsTablesLoader {
         batchStatement.add(playerStatsByOpponentStmt);
         batchStatement.add(statsBySeasonStmt);
 
-        session.execute(batchStatement);
+        cassandraConfig.session().getObject().execute(batchStatement);
     }
 }

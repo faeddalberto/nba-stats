@@ -52,7 +52,7 @@ public class TeamsFileReaderTest {
         assertTrue(teamsMap.containsKey("por"));
         assertTrue(teamsMap.containsKey("uth"));
 
-        Team chi = new Team("chi", "Chicago Bulls", Conference.EASTERN_CONFERENCE.name(), Division.CENTRAL_DIVISION.name());
+        Team chi = new Team("chi", "Chicago Bulls", Conference.EASTERN_CONFERENCE.getValue(), Division.CENTRAL_DIVISION.getValue());
         assertTrue(teamsMap.get("chi").equals(chi));
     }
 }

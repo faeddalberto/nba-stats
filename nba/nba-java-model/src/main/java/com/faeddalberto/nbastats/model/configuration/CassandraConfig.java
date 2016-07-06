@@ -1,5 +1,6 @@
 package com.faeddalberto.nbastats.model.configuration;
 
+import com.datastax.driver.mapping.MappingManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,8 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
     @Autowired
     private Environment environment;
 
+    private MappingManager mappingManager;
+
     @Override
     protected String getKeyspaceName() {
         return environment.getProperty("cassandra.keyspace");
@@ -42,5 +45,13 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
     @Bean
     public CassandraMappingContext cassandraMapping() throws ClassNotFoundException {
         return new BasicCassandraMappingContext();
+    }
+
+    public MappingManager getMappingManager() throws Exception {
+        if (mappingManager == null) {
+            mappingManager = new MappingManager(session().getObject());
+        }
+
+        return mappingManager;
     }
 }

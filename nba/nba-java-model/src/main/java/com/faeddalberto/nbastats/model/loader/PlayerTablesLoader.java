@@ -22,8 +22,7 @@ public class PlayerTablesLoader {
 
     public void insertPlayerBatch(Player player, List<PlayerCareerByName> playerCareerByName) throws Exception {
         BatchStatement batchStatement = new BatchStatement();
-        Session session = cassandraConfig.session().getObject();
-        MappingManager mappingManager = new MappingManager(session);
+        MappingManager mappingManager = cassandraConfig.getMappingManager();
 
         PlayerAccessor playerAccessor = mappingManager.createAccessor(PlayerAccessor.class);
         PlayerCareerByNameAccessor playerCareerByNameAccessor = mappingManager.createAccessor(PlayerCareerByNameAccessor.class);
@@ -35,6 +34,6 @@ public class PlayerTablesLoader {
             batchStatement.add(careerStepStmt);
         }
 
-        session.execute(batchStatement);
+        cassandraConfig.session().getObject().execute(batchStatement);
     }
 }

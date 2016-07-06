@@ -33,7 +33,6 @@ public class GamesStatsFileReader {
     }
 
     private Map<String, List<PlayerStatsByGame>> readPlayerStatsFromFile(File gameStatsFile) throws IOException {
-        System.out.println(gameStatsFile.getName());
         InputStream is = new FileInputStream(gameStatsFile);
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
@@ -48,7 +47,6 @@ public class GamesStatsFileReader {
         String[] playerStatsSplit = line.split(",");
         UUID gameId = gameMap.get(playerStatsSplit[0]).getGameId();
         Date gameDate = gameMap.get(playerStatsSplit[0]).getDate();
-        System.out.println("player: " + playerStatsSplit[1]);
         UUID playerId = playerMap.get(playerStatsSplit[1]).getPlayerId();
         int season = Integer.valueOf(playerStatsSplit[2]);
         String playerName = playerMap.get(playerStatsSplit[1]).getName();

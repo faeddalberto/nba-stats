@@ -20,7 +20,7 @@ public class StatsBySeasonRepository {
 
     public List<StatsBySeason> getLeagueStatsBySeason(int season) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         StatsBySeasonAccessor accessor = mappingManager.createAccessor(StatsBySeasonAccessor.class);
 
@@ -31,7 +31,7 @@ public class StatsBySeasonRepository {
 
     public List<StatsBySeason> getLeagueStatsBySeasonAndMonth(int season, int month) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         StatsBySeasonAccessor accessor = mappingManager.createAccessor(StatsBySeasonAccessor.class);
 
@@ -42,7 +42,7 @@ public class StatsBySeasonRepository {
 
     public List<StatsBySeason> getTeamStatsBySeasonAndMonth(int season, int month, String playerTeam) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         StatsBySeasonAccessor accessor = mappingManager.createAccessor(StatsBySeasonAccessor.class);
 
@@ -53,7 +53,7 @@ public class StatsBySeasonRepository {
 
     public List<StatsBySeason> getPlayerStatsByYearAndMonth(int year, int month, String playerTeam, String playerName) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         StatsBySeasonAccessor accessor = mappingManager.createAccessor(StatsBySeasonAccessor.class);
 
@@ -64,7 +64,7 @@ public class StatsBySeasonRepository {
 
     public void deleteLeagueStatsBySeason(int season) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         StatsBySeasonAccessor accessor = mappingManager.createAccessor(StatsBySeasonAccessor.class);
 
@@ -73,7 +73,7 @@ public class StatsBySeasonRepository {
 
     public void deleteLeagueStatsBySeasonAndMonth(int season, int month) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         StatsBySeasonAccessor accessor = mappingManager.createAccessor(StatsBySeasonAccessor.class);
 
@@ -82,7 +82,7 @@ public class StatsBySeasonRepository {
 
     public void deleteTeamStatsBySeasonAndMonth(int season, int month, String playerTeam) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         StatsBySeasonAccessor accessor = mappingManager.createAccessor(StatsBySeasonAccessor.class);
 
@@ -91,7 +91,7 @@ public class StatsBySeasonRepository {
 
     public void deletePlayerStatsBySeasonAndMonth( int season, int month, String playerTeam, String playerName) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         StatsBySeasonAccessor accessor = mappingManager.createAccessor(StatsBySeasonAccessor.class);
 

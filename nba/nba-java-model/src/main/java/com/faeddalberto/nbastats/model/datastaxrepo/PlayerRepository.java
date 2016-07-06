@@ -21,7 +21,7 @@ public class PlayerRepository {
 
     public List<Player> getAllPlayers() throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerAccessor playerAccessor = mappingManager.createAccessor(PlayerAccessor.class);
 
@@ -32,7 +32,7 @@ public class PlayerRepository {
 
     public Player getPlayerById(UUID userId) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerAccessor playerAccessor = mappingManager.createAccessor(PlayerAccessor.class);
 

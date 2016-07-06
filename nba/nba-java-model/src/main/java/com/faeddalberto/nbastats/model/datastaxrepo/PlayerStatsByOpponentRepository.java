@@ -20,7 +20,7 @@ public class PlayerStatsByOpponentRepository {
 
     public List<PlayerStatsByOpponent> getPlayerStatsByOpponent(String opponentTeam, String playerName) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByOpponentAccessor accessor = mappingManager.createAccessor(PlayerStatsByOpponentAccessor.class);
 
@@ -31,7 +31,7 @@ public class PlayerStatsByOpponentRepository {
 
     public List<PlayerStatsByOpponent> getPlayerStatsByOpponentAndPlayerTeam(String opponentTeam, String playerName, String playerTeam) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByOpponentAccessor accessor = mappingManager.createAccessor(PlayerStatsByOpponentAccessor.class);
 
@@ -42,7 +42,7 @@ public class PlayerStatsByOpponentRepository {
 
     public List<PlayerStatsByOpponent> getPlayerStatsByOpponentAndPlayerTeamAndSeason(String opponentTeam, String playerName, String playerTeam, int season) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByOpponentAccessor accessor = mappingManager.createAccessor(PlayerStatsByOpponentAccessor.class);
 
@@ -53,7 +53,7 @@ public class PlayerStatsByOpponentRepository {
 
     public void deletePlayerStatsByOpponent(String opponentTeam, String playerName) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByOpponentAccessor accessor = mappingManager.createAccessor(PlayerStatsByOpponentAccessor.class);
 
@@ -62,7 +62,7 @@ public class PlayerStatsByOpponentRepository {
 
     public void deletePlayerStatsByOpponentAndPlayerTeam(String opponentTeam, String playerName, String playerTeam) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByOpponentAccessor accessor = mappingManager.createAccessor(PlayerStatsByOpponentAccessor.class);
 
@@ -71,7 +71,7 @@ public class PlayerStatsByOpponentRepository {
 
     public void deletePlayerStatsByOpponentAndPlayerTeamAndSeason(String opponentTeam, String playerName, String playerTeam, int season) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerStatsByOpponentAccessor accessor = mappingManager.createAccessor(PlayerStatsByOpponentAccessor.class);
 

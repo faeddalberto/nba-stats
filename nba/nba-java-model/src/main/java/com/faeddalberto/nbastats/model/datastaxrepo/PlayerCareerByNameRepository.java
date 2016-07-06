@@ -20,7 +20,7 @@ public class PlayerCareerByNameRepository {
 
     public List<PlayerCareerByName> getPlayerCareerByName(String name) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerCareerByNameAccessor playerCareerByNameAccessor = mappingManager.createAccessor(PlayerCareerByNameAccessor.class);
 
@@ -31,7 +31,7 @@ public class PlayerCareerByNameRepository {
 
     public List<PlayerCareerByName> getPlayerInfoByNameAndYear(String name, int year) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerCareerByNameAccessor playerCareerByNameAccessor = mappingManager.createAccessor(PlayerCareerByNameAccessor.class);
 
@@ -42,7 +42,7 @@ public class PlayerCareerByNameRepository {
 
     public void deletePlayerCareer(String name) throws Exception {
 
-        mappingManager = new MappingManager(cassandraConfig.session().getObject());
+        mappingManager = cassandraConfig.getMappingManager();
 
         PlayerCareerByNameAccessor playerCareerByNameAccessor = mappingManager.createAccessor(PlayerCareerByNameAccessor.class);
 
