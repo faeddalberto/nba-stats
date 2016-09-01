@@ -7,11 +7,12 @@ import com.datastax.driver.mapping.annotations.Table;
 import com.google.common.base.Objects;
 import org.springframework.data.cassandra.mapping.CassandraType;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
 @Table(name = "player", keyspace = "nba")
-public class Player {
+public class Player implements Serializable {
 
     public Player() { }
 

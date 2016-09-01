@@ -1,7 +1,6 @@
 package com.faeddalberto.nbastats.model.loader;
 
 import com.faeddalberto.nbastats.model.CassandraIntegration;
-import com.faeddalberto.nbastats.model.configuration.CassandraConfig;
 import com.faeddalberto.nbastats.model.datastaxrepo.PlayerStatsByGameRepository;
 import com.faeddalberto.nbastats.model.datastaxrepo.PlayerStatsByOpponentRepository;
 import com.faeddalberto.nbastats.model.datastaxrepo.StatsBySeasonRepository;
@@ -55,7 +54,7 @@ public class StatsTablesLoaderTest extends CassandraIntegration {
 
         PlayerStatsByGame playerStatsByGame = new PlayerStatsByGame(gameId, gameDate, playerId, 2014, "Washington Wizards", "POINT GUARD", "New York Knicks", 39, "John Wall", fieldGoals, threePoints, freeThrows, 3, 5, 8, 7, 1, 0, 1, 4, 29, 31);
         PlayerStatsByOpponent playerStatsByOpponent = new PlayerStatsByOpponent("New York Knicks", "John Wall", "Washington Wizards", 2014, gameDate, gameId, playerId, 39, fieldGoals, threePoints, freeThrows, 3, 5, 8, 7, 1, 0, 1, 4, 29, 31);
-        StatsBySeason statsBySeason = new StatsBySeason(2014, Calendar.MARCH, "Washington Wizards", "John Wall", "New York Knicks", gameId, playerId, gameDate, 39, fieldGoals, threePoints, freeThrows, 3, 5, 8, 7, 1, 0, 1, 4, 29, 31);
+        StatsBySeason statsBySeason = new StatsBySeason(2014, Calendar.MARCH, "Washington Wizards", "John Wall", "New York Knicks", gameId, playerId, 7, 0, gameDate, 5, fieldGoals, freeThrows, 39, 3, 4, 29, 31, 1, 8, 1, threePoints);
 
         statsTablesLoader.insertStatsBatch(playerStatsByGame, playerStatsByOpponent, statsBySeason);
 

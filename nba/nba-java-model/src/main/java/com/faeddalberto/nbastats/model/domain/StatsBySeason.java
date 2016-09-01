@@ -5,37 +5,38 @@ import com.datastax.driver.mapping.annotations.*;
 import com.google.common.base.Objects;
 import org.springframework.data.cassandra.mapping.CassandraType;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
 @Table(name = "stats_by_season", keyspace = "nba")
-public class StatsBySeason {
+public class StatsBySeason implements Serializable {
 
     public StatsBySeason() {}
 
     public StatsBySeason(
-                        int season,
-                        int month,
-                        String playerTeam,
-                        String playerName,
-                        String opponentTeam,
-                        UUID gameId,
-                        UUID playerId,
-                        Date date,
-                        int minsPlayed,
-                        MadeAttemptedStat fieldGoals,
-                        MadeAttemptedStat threePoints,
-                        MadeAttemptedStat freeThrows,
-                        int offensiveRebounds,
-                        int defensiveRebounds,
-                        int totalRebounds,
-                        int assists,
-                        int steals,
-                        int blocks,
-                        int turnovers,
-                        int personalFauls,
-                        int plusMinus,
-                        int points) {
+            int season,
+            int month,
+            String playerTeam,
+            String playerName,
+            String opponentTeam,
+            UUID gameId,
+            UUID playerId,
+            int assists,
+            int blocks,
+            Date date,
+            int defensiveRebounds,
+            MadeAttemptedStat fieldGoals,
+            MadeAttemptedStat freeThrows,
+            int minsPlayed,
+            int offensiveRebounds,
+            int personalFauls,
+            int plusMinus,
+            int points,
+            int steals,
+            int totalRebounds,
+            int turnovers,
+            MadeAttemptedStat threePoints) {
         this.season = season;
         this.month = month;
         this.playerTeam = playerTeam;
@@ -43,21 +44,21 @@ public class StatsBySeason {
         this.opponentTeam = opponentTeam;
         this.gameId = gameId;
         this.playerId = playerId;
-        this.date = date;
-        this.minsPlayed = minsPlayed;
-        this.fieldGoals = fieldGoals;
-        this.threePoints = threePoints;
-        this.freeThrows = freeThrows;
-        this.offensiveRebounds = offensiveRebounds;
-        this.defensiveRebounds = defensiveRebounds;
-        this.totalRebounds = totalRebounds;
         this.assists = assists;
-        this.steals = steals;
         this.blocks = blocks;
-        this.turnovers = turnovers;
+        this.date = date;
+        this.defensiveRebounds = defensiveRebounds;
+        this.fieldGoals = fieldGoals;
+        this.freeThrows = freeThrows;
+        this.minsPlayed = minsPlayed;
+        this.offensiveRebounds = offensiveRebounds;
         this.personalFauls = personalFauls;
         this.plusMinus = plusMinus;
         this.points = points;
+        this.steals = steals;
+        this.totalRebounds = totalRebounds;
+        this.turnovers = turnovers;
+        this.threePoints = threePoints;
     }
 
     @PartitionKey(0)

@@ -12,7 +12,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -203,21 +202,10 @@ public class Loader {
                                 psg.getOpponentTeam(),
                                 psg.getGameId(),
                                 psg.getPlayerId(),
-                                psg.getDate(),
-                                psg.getMinsPlayed(),
-                                psg.getFieldGoals(),
-                                psg.getThreePoints(),
-                                psg.getFreeThrows(),
-                                psg.getOffensiveRebounds(),
-                                psg.getDefensiveRebounds(),
-                                psg.getTotalRebounds(),
-                                psg.getAssists(),
-                                psg.getSteals(),
-                                psg.getBlocks(),
-                                psg.getTurnovers(),
-                                psg.getPersonalFauls(),
-                                psg.getPlusMinus(),
-                                psg.getPoints());
+                                psg.getAssists(), psg.getBlocks(), psg.getDate(),
+                                psg.getDefensiveRebounds(), psg.getFieldGoals(), psg.getFreeThrows(), psg.getMinsPlayed(),
+                                psg.getOffensiveRebounds(), psg.getPersonalFauls(), psg.getPlusMinus(), psg.getPoints(), psg.getSteals(), psg.getTotalRebounds(), psg.getTurnovers(), psg.getThreePoints()
+                        );
 
                 statsTablesLoader.insertStatsBatch(psg, playerStatsByOpponent, statsBySeason);
             }

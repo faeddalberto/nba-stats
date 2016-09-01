@@ -39,7 +39,7 @@ public class StatsBySeasonRepositoryTest extends CassandraIntegration {
         MadeAttemptedStat threePts_ma = new MadeAttemptedStat(0, 0);
         MadeAttemptedStat ft_ma = new MadeAttemptedStat(6, 6);
         Date gameDate = new GregorianCalendar(2015, Calendar.NOVEMBER, 24).getTime();
-        StatsBySeason statsBySeason = new StatsBySeason(2016, 11, "Houston Rockets", "Tim Duncan", "San Antonio Spurs", UUID.randomUUID(), UUID.randomUUID(), gameDate, 25, fg_ma, threePts_ma, ft_ma, 8, 3, 11, 2, 1, 4, 2, 3, 23, 15);
+        StatsBySeason statsBySeason = new StatsBySeason(2016, 11, "Houston Rockets", "Tim Duncan", "San Antonio Spurs", UUID.randomUUID(), UUID.randomUUID(), 2, 4, gameDate, 3, fg_ma, ft_ma, 25, 8, 3, 23, 15, 1, 11, 2, threePts_ma);
 
         mapper.save(statsBySeason);
 
@@ -57,7 +57,7 @@ public class StatsBySeasonRepositoryTest extends CassandraIntegration {
         MadeAttemptedStat threePts_ma = new MadeAttemptedStat(0, 0);
         MadeAttemptedStat ft_ma = new MadeAttemptedStat(6, 6);
         Date gameDate = new GregorianCalendar(2015, Calendar.NOVEMBER, 24).getTime();
-        StatsBySeason statsBySeason = new StatsBySeason(2016, 1, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), gameDate, 25, fg_ma, threePts_ma, ft_ma, 8, 3, 11, 2, 1, 4, 2, 3, 23, 15);
+        StatsBySeason statsBySeason = new StatsBySeason(2016, 1, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), 2, 4, gameDate, 3, fg_ma, ft_ma, 25, 8, 3, 23, 15, 1, 11, 2, threePts_ma);
 
         mapper.save(statsBySeason);
 
@@ -76,8 +76,8 @@ public class StatsBySeasonRepositoryTest extends CassandraIntegration {
         MadeAttemptedStat ft_ma = new MadeAttemptedStat(3, 4);
         Date gameDate1 = new GregorianCalendar(2016, Calendar.MARCH, 8).getTime();
         Date gameDate2 = new GregorianCalendar(2016, Calendar.MARCH, 12).getTime();
-        StatsBySeason beliStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", UUID.randomUUID(), UUID.randomUUID(), gameDate1, 21, fg_ma, threePts_ma, ft_ma, 3, 3, 6, 4, 1, 4, 2, 2, 15, 15);
-        StatsBySeason cousinStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Demarcus Cousin", "New York Knicks", UUID.randomUUID(), UUID.randomUUID(), gameDate2, 32, fg_ma, threePts_ma, ft_ma, 7, 1, 8, 1, 5, 2, 6, 4, 11, 12);
+        StatsBySeason beliStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", UUID.randomUUID(), UUID.randomUUID(), 4, 4, gameDate1, 3, fg_ma, ft_ma, 21, 3, 2, 15, 15, 1, 6, 2, threePts_ma);
+        StatsBySeason cousinStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Demarcus Cousin", "New York Knicks", UUID.randomUUID(), UUID.randomUUID(), 1, 2, gameDate2, 1, fg_ma, ft_ma, 32, 7, 4, 11, 12, 5, 8, 6, threePts_ma);
 
         mapper.save(beliStats);
         mapper.save(cousinStats);
@@ -101,8 +101,8 @@ public class StatsBySeasonRepositoryTest extends CassandraIntegration {
         UUID gameId1 = UUID.randomUUID();
         UUID gameId2 = UUID.randomUUID();
         UUID playerId = UUID.randomUUID();
-        StatsBySeason beliStats1 = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", gameId1, playerId, gameDate1, 21, fg_ma, threePts_ma, ft_ma, 3, 3, 6, 4, 1, 4, 2, 2, 15, 15);
-        StatsBySeason beliStats2 = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "New York Knicks", gameId2, playerId, gameDate2, 32, fg_ma, threePts_ma, ft_ma, 7, 1, 8, 1, 5, 2, 6, 4, 11, 12);
+        StatsBySeason beliStats1 = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", gameId1, playerId, 4, 4, gameDate1, 3, fg_ma, ft_ma, 21, 3, 2, 15, 15, 1, 6, 2, threePts_ma);
+        StatsBySeason beliStats2 = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "New York Knicks", gameId2, playerId, 1, 2, gameDate2, 1, fg_ma, ft_ma, 32, 7, 4, 11, 12, 5, 8, 6, threePts_ma);
 
         mapper.save(beliStats1);
         mapper.save(beliStats2);
@@ -122,7 +122,7 @@ public class StatsBySeasonRepositoryTest extends CassandraIntegration {
         MadeAttemptedStat threePts_ma = new MadeAttemptedStat(0, 0);
         MadeAttemptedStat ft_ma = new MadeAttemptedStat(6, 6);
         Date gameDate = new GregorianCalendar(2015, Calendar.NOVEMBER, 24).getTime();
-        StatsBySeason statsBySeason = new StatsBySeason(2016, 1, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), gameDate, 25, fg_ma, threePts_ma, ft_ma, 8, 3, 11, 2, 1, 4, 2, 3, 23, 15);
+        StatsBySeason statsBySeason = new StatsBySeason(2016, 1, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), 2, 4, gameDate, 3, fg_ma, ft_ma, 25, 8, 3, 23, 15, 1, 11, 2, threePts_ma);
 
         mapper.save(statsBySeason);
 
@@ -153,9 +153,9 @@ public class StatsBySeasonRepositoryTest extends CassandraIntegration {
         Date gameDate1 = new GregorianCalendar(2016, Calendar.MARCH, 8).getTime();
         Date gameDate2 = new GregorianCalendar(2016, Calendar.MARCH, 12).getTime();
         Date gameDate3 = new GregorianCalendar(2016, Calendar.JANUARY, 24).getTime();
-        StatsBySeason beliStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", UUID.randomUUID(), UUID.randomUUID(), gameDate1, 21, fg_ma, threePts_ma, ft_ma, 3, 3, 6, 4, 1, 4, 2, 2, 15, 15);
-        StatsBySeason cousinStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Demarcus Cousin", "New York Knicks", UUID.randomUUID(), UUID.randomUUID(), gameDate2, 32, fg_ma, threePts_ma, ft_ma, 7, 1, 8, 1, 5, 2, 6, 4, 11, 12);
-        StatsBySeason ervinStats = new StatsBySeason(2016, Calendar.JANUARY, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), gameDate3, 25, fg_ma, threePts_ma, ft_ma, 8, 3, 11, 2, 1, 4, 2, 3, 23, 15);
+        StatsBySeason beliStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", UUID.randomUUID(), UUID.randomUUID(), 4, 4, gameDate1, 3, fg_ma, ft_ma, 21, 3, 2, 15, 15, 1, 6, 2, threePts_ma);
+        StatsBySeason cousinStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Demarcus Cousin", "New York Knicks", UUID.randomUUID(), UUID.randomUUID(), 1, 2, gameDate2, 1, fg_ma, ft_ma, 32, 7, 4, 11, 12, 5, 8, 6, threePts_ma);
+        StatsBySeason ervinStats = new StatsBySeason(2016, Calendar.JANUARY, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), 2, 4, gameDate3, 3, fg_ma, ft_ma, 25, 8, 3, 23, 15, 1, 11, 2, threePts_ma);
         mapper.save(beliStats);
         mapper.save(cousinStats);
         mapper.save(ervinStats);
@@ -184,9 +184,9 @@ public class StatsBySeasonRepositoryTest extends CassandraIntegration {
         Date gameDate1 = new GregorianCalendar(2016, Calendar.MARCH, 8).getTime();
         Date gameDate2 = new GregorianCalendar(2016, Calendar.MARCH, 12).getTime();
         Date gameDate3 = new GregorianCalendar(2016, Calendar.JANUARY, 24).getTime();
-        StatsBySeason beliStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", UUID.randomUUID(), UUID.randomUUID(), gameDate1, 21, fg_ma, threePts_ma, ft_ma, 3, 3, 6, 4, 1, 4, 2, 2, 15, 15);
-        StatsBySeason cousinStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Demarcus Cousin", "New York Knicks", UUID.randomUUID(), UUID.randomUUID(), gameDate2, 32, fg_ma, threePts_ma, ft_ma, 7, 1, 8, 1, 5, 2, 6, 4, 11, 12);
-        StatsBySeason ervinStats = new StatsBySeason(2016, Calendar.JANUARY, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), gameDate3, 25, fg_ma, threePts_ma, ft_ma, 8, 3, 11, 2, 1, 4, 2, 3, 23, 15);
+        StatsBySeason beliStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", UUID.randomUUID(), UUID.randomUUID(), 4, 4, gameDate1, 3, fg_ma, ft_ma, 21, 3, 2, 15, 15, 1, 6, 2, threePts_ma);
+        StatsBySeason cousinStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Demarcus Cousin", "New York Knicks", UUID.randomUUID(), UUID.randomUUID(), 1, 2, gameDate2, 1, fg_ma, ft_ma, 32, 7, 4, 11, 12, 5, 8, 6, threePts_ma);
+        StatsBySeason ervinStats = new StatsBySeason(2016, Calendar.JANUARY, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), 2, 4, gameDate3, 3, fg_ma, ft_ma, 25, 8, 3, 23, 15, 1, 11, 2, threePts_ma);
         mapper.save(beliStats);
         mapper.save(cousinStats);
         mapper.save(ervinStats);
@@ -215,9 +215,9 @@ public class StatsBySeasonRepositoryTest extends CassandraIntegration {
         Date gameDate1 = new GregorianCalendar(2016, Calendar.MARCH, 8).getTime();
         Date gameDate2 = new GregorianCalendar(2016, Calendar.MARCH, 12).getTime();
         Date gameDate3 = new GregorianCalendar(2016, Calendar.JANUARY, 24).getTime();
-        StatsBySeason beliStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", UUID.randomUUID(), UUID.randomUUID(), gameDate1, 21, fg_ma, threePts_ma, ft_ma, 3, 3, 6, 4, 1, 4, 2, 2, 15, 15);
-        StatsBySeason cousinStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Demarcus Cousin", "New York Knicks", UUID.randomUUID(), UUID.randomUUID(), gameDate2, 32, fg_ma, threePts_ma, ft_ma, 7, 1, 8, 1, 5, 2, 6, 4, 11, 12);
-        StatsBySeason ervinStats = new StatsBySeason(2016, Calendar.JANUARY, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), gameDate3, 25, fg_ma, threePts_ma, ft_ma, 8, 3, 11, 2, 1, 4, 2, 3, 23, 15);
+        StatsBySeason beliStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", UUID.randomUUID(), UUID.randomUUID(), 4, 4, gameDate1, 3, fg_ma, ft_ma, 21, 3, 2, 15, 15, 1, 6, 2, threePts_ma);
+        StatsBySeason cousinStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Demarcus Cousin", "New York Knicks", UUID.randomUUID(), UUID.randomUUID(), 1, 2, gameDate2, 1, fg_ma, ft_ma, 32, 7, 4, 11, 12, 5, 8, 6, threePts_ma);
+        StatsBySeason ervinStats = new StatsBySeason(2016, Calendar.JANUARY, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), 2, 4, gameDate3, 3, fg_ma, ft_ma, 25, 8, 3, 23, 15, 1, 11, 2, threePts_ma);
         mapper.save(beliStats);
         mapper.save(cousinStats);
         mapper.save(ervinStats);
@@ -246,9 +246,9 @@ public class StatsBySeasonRepositoryTest extends CassandraIntegration {
         Date gameDate1 = new GregorianCalendar(2016, Calendar.MARCH, 8).getTime();
         Date gameDate2 = new GregorianCalendar(2016, Calendar.MARCH, 12).getTime();
         Date gameDate3 = new GregorianCalendar(2016, Calendar.JANUARY, 24).getTime();
-        StatsBySeason beliStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", UUID.randomUUID(), UUID.randomUUID(), gameDate1, 21, fg_ma, threePts_ma, ft_ma, 3, 3, 6, 4, 1, 4, 2, 2, 15, 15);
-        StatsBySeason cousinStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Demarcus Cousin", "New York Knicks", UUID.randomUUID(), UUID.randomUUID(), gameDate2, 32, fg_ma, threePts_ma, ft_ma, 7, 1, 8, 1, 5, 2, 6, 4, 11, 12);
-        StatsBySeason ervinStats = new StatsBySeason(2016, Calendar.JANUARY, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), gameDate3, 25, fg_ma, threePts_ma, ft_ma, 8, 3, 11, 2, 1, 4, 2, 3, 23, 15);
+        StatsBySeason beliStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Marco Belinelli", "Golden State Warriors", UUID.randomUUID(), UUID.randomUUID(), 4, 4, gameDate1, 3, fg_ma, ft_ma, 21, 3, 2, 15, 15, 1, 6, 2, threePts_ma);
+        StatsBySeason cousinStats = new StatsBySeason(2016, Calendar.MARCH, "Sacramento Kings", "Demarcus Cousin", "New York Knicks", UUID.randomUUID(), UUID.randomUUID(), 1, 2, gameDate2, 1, fg_ma, ft_ma, 32, 7, 4, 11, 12, 5, 8, 6, threePts_ma);
+        StatsBySeason ervinStats = new StatsBySeason(2016, Calendar.JANUARY, "Toronto Raptors", "Kyrie Ervin", "Cleveland Cavs", UUID.randomUUID(), UUID.randomUUID(), 2, 4, gameDate3, 3, fg_ma, ft_ma, 25, 8, 3, 23, 15, 1, 11, 2, threePts_ma);
         mapper.save(beliStats);
         mapper.save(cousinStats);
         mapper.save(ervinStats);

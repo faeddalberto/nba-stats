@@ -8,11 +8,12 @@ import org.springframework.data.cassandra.mapping.Column;
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.mapping.Table;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
 @Table(value = "game_by_season_teams")
-public class GameBySeasonTeams {
+public class GameBySeasonTeams implements Serializable {
 
     public GameBySeasonTeams(
                             int season,

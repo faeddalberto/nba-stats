@@ -1,0 +1,14 @@
+-teams' winning percentage in a season
+    game table
+        - home wins
+        - away wins
+
+-teams' average scored points in a month/season
+    game table
+        - average points home
+        - average points away
+
+-triple doubles
+-players scoring more than 40 points in a game
+-players with more than 15 assists in a game
+-players with more than 20 rebounds in a game

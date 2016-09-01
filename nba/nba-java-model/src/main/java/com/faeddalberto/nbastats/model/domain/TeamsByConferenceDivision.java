@@ -8,8 +8,10 @@ import org.springframework.data.cassandra.mapping.Column;
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.mapping.Table;
 
+import java.io.Serializable;
+
 @Table(value = "teams_by_conference_division")
-public class TeamsByConferenceDivision {
+public class TeamsByConferenceDivision implements Serializable {
 
     public TeamsByConferenceDivision() {}
 

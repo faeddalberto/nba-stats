@@ -4,8 +4,10 @@ import com.datastax.driver.mapping.annotations.Field;
 import com.datastax.driver.mapping.annotations.UDT;
 import com.google.common.base.Objects;
 
+import java.io.Serializable;
+
 @UDT(name = "made_attempted_stat", keyspace = "nba")
-public class MadeAttemptedStat {
+public class MadeAttemptedStat implements Serializable {
 
     public MadeAttemptedStat() {}
 

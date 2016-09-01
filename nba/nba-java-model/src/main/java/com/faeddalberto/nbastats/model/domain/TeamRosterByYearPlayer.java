@@ -8,10 +8,11 @@ import org.springframework.data.cassandra.mapping.Column;
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.mapping.Table;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 @Table(value = "team_roster_by_year")
-public class TeamRosterByYearPlayer {
+public class TeamRosterByYearPlayer implements Serializable {
 
     public TeamRosterByYearPlayer() {}
 

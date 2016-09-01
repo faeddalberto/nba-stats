@@ -5,11 +5,12 @@ import com.datastax.driver.mapping.annotations.*;
 import com.google.common.base.Objects;
 import org.springframework.data.cassandra.mapping.CassandraType;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
 @Table(name = "player_stats_by_opponent", keyspace = "nba")
-public class PlayerStatsByOpponent {
+public class PlayerStatsByOpponent implements Serializable {
 
     public PlayerStatsByOpponent() {}
 

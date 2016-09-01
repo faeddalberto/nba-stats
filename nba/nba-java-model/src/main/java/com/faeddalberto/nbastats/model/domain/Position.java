@@ -4,8 +4,10 @@ import com.datastax.driver.mapping.annotations.Field;
 import com.datastax.driver.mapping.annotations.UDT;
 import com.google.common.base.Objects;
 
+import java.io.Serializable;
+
 @UDT(keyspace = "nba", name = "position")
-public class Position {
+public class Position implements Serializable {
 
     public Position(String shortName, String longName) {
         this.shortName = shortName;

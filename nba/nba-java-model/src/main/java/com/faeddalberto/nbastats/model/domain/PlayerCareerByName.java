@@ -7,11 +7,12 @@ import com.faeddalberto.nbastats.model.enums.Role;
 import com.google.common.base.Objects;
 import org.springframework.data.cassandra.mapping.CassandraType;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
 @Table(name = "player_career_by_name", keyspace = "nba")
-public class PlayerCareerByName {
+public class PlayerCareerByName implements Serializable {
 
     public PlayerCareerByName() {}
 

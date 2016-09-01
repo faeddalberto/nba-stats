@@ -8,11 +8,12 @@ import org.springframework.data.cassandra.mapping.Column;
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.mapping.Table;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
 @Table(value = "game")
-public class Game {
+public class Game implements Serializable {
 
     public Game() {}
 
