@@ -3,11 +3,13 @@ package com.faeddalberto.nbastats.analysis.context
 import java.io.FileInputStream
 import java.util.Properties
 
+import org.apache.spark.sql.cassandra.CassandraSQLContext
 import org.apache.spark.{SparkConf, SparkContext}
 
 object ContextCreator {
 
   var sc :SparkContext =_
+  var csc : CassandraSQLContext = _
 
   val (contactPoints, masterHost, masterPort, keyspace) =
     try {
@@ -35,6 +37,14 @@ object ContextCreator {
     if (sc == null) {
       sc = new SparkContext(conf)
     }
-      sc
+    sc
+  }
+
+  def getCassandraSQLContext() : CassandraSQLContext = {
+    if (csc == null) {
+      csc = new CassandraSQLContext(getSparkContext())
+      csc.setKeyspace("nba")
+    }
+    csc
   }
 }
