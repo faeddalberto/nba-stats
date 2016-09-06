@@ -57,8 +57,8 @@ object Game {
         homeTeamScore = scoreSplit(0).toInt
         visitTeamScore = scoreSplit(1).toInt
       } else {
-        homeTeamName = otherTeamName
-        visitTeamName = mainTeamName
+        homeTeamName = mainTeamName
+        visitTeamName = otherTeamName
         homeTeamScore = scoreSplit(1).toInt
         visitTeamScore = scoreSplit(0).toInt
       }
@@ -69,8 +69,8 @@ object Game {
         homeTeamScore = scoreSplit(1).toInt
         visitTeamScore = scoreSplit(0).toInt
       } else {
-        homeTeamName = mainTeamName
-        visitTeamName = otherTeamName
+        homeTeamName = otherTeamName
+        visitTeamName = mainTeamName
         homeTeamScore = scoreSplit(0).toInt
         visitTeamScore = scoreSplit(1).toInt
       }

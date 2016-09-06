@@ -23,11 +23,9 @@ object TimeBasedStatsAnalyser {
 
   def getSeasonPerformanceByPointsHigherThen(season :Int, points :Int) : DataFrame = {
 
-    val sc = ContextCreator.getSparkContext()
+    val csc :CassandraSQLContext = ContextCreator.getCassandraSQLContext()
 
-    val csc :CassandraSQLContext = new CassandraSQLContext(sc)
-
-    val seasonStats = csc.sql("SELECT * FROM nba.stats_by_season WHERE season =" + season + " AND pts >= " + points)
+    val seasonStats = csc.sql("SELECT * FROM stats_by_season WHERE season =" + season + " AND pts >= " + points)
 
     seasonStats
   }

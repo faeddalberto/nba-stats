@@ -65,4 +65,8 @@ object Scraper extends App {
   def savePlayersMatchesStats(matchId :String, playersStatsPerGame :ArrayBuffer[PlayerMatchStats]) = {
     new StatsWriter writeToFile(matchId, playersStatsPerGame, path + "/games-stats")
   }
+
+  def teamGamesFileName(season :Int, team :String): String = {
+    team.replaceAll(" ", "-") + "_" + season + "_games.csv"
+  }
 }

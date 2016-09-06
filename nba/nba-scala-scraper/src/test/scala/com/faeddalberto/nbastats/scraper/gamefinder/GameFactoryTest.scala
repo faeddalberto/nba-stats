@@ -25,7 +25,7 @@ class GameFactoryTest extends FlatSpec with Matchers {
     val bullsGames = gameFactory.getSeasonGamesResultsForTeam(bulls, 2016)
 
     bullsGames(0).toString shouldBe "matchId: 400578302, season: 2016 Regular [2015-10-29] | NY Knicks [80] - [104] Chicago Bulls"
-    bullsGames(1).toString shouldBe "matchId: 400578314, season: 2016 Regular [2015-10-31] | Cleveland [108] - [114] Chicago Bulls"
+    bullsGames(1).toString shouldBe "matchId: 400578314, season: 2016 Regular [2015-10-31] | Chicago Bulls [108] - [114] Cleveland"
     bullsGames(2).toString shouldBe "matchId: 400578327, season: 2016 Regular [2015-11-01] | Minnesota [105] - [106] Chicago Bulls"
   }
 }

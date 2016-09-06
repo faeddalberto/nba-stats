@@ -57,7 +57,7 @@ class GameFactory(documentProvider :DocumentProvider) {
             //skip this game
           } else {
             val score = text(data, 2, 1).split(" ")(0)
-            val matchId = data.get(2).select(unordered_info_list).get(1).select("a").attr("href").split("id=")(1)
+            val matchId = data.get(2).select(unordered_info_list).get(1).select("a").attr("href").split("/").last
             val won = if (text(data, 2, 0) equals "W") true else false
 
             teamGames += Game(matchId, year, seasonType, date, isHomeTeam, team.name, otherTeamName, score, won)
