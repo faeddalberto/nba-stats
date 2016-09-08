@@ -4,6 +4,7 @@ import com.faeddalberto.nbastats.model.domain.Game;
 import com.faeddalberto.nbastats.model.domain.Team;
 import com.faeddalberto.nbastats.model.enums.SeasonType;
 import com.sun.tools.javac.util.Pair;
+import com.sun.xml.internal.ws.model.RuntimeModelerException;
 
 import java.io.*;
 import java.text.DateFormat;
@@ -68,7 +69,9 @@ public class GamesFileReader {
 
         try {
             date = formatter.parse(gameSplit[3]);
-        } catch (ParseException e) {}
+        } catch (ParseException e) {
+            throw new RuntimeException("error parsing date: " + gameSplit[3]);
+        }
 
         return date;
     }

@@ -45,8 +45,10 @@ public class GamesStatsFileReader {
 
     private static Function<String, Pair<String, PlayerStatsByGame>> mapToPlayerStats = (line) -> {
         String[] playerStatsSplit = line.split(",");
-        UUID gameId = gameMap.get(playerStatsSplit[0]).getGameId();
-        Date gameDate = gameMap.get(playerStatsSplit[0]).getDate();
+        Game game = gameMap.get(playerStatsSplit[0]);
+
+        UUID gameId = game.getGameId();
+        Date gameDate = game.getDate();
         UUID playerId = playerMap.get(playerStatsSplit[1]).getPlayerId();
         int season = Integer.valueOf(playerStatsSplit[2]);
         String playerName = playerMap.get(playerStatsSplit[1]).getName();
