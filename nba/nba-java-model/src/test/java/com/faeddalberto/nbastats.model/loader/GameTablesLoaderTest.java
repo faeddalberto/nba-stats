@@ -48,7 +48,7 @@ public class GameTablesLoaderTest extends CassandraIntegration {
         gameTablesLoader.insertGameBatch(game, gameBySeasonTeams);
 
         Game insertedGame = gameRepository.findById(gameId);
-        GameBySeasonTeams insertedGameBySeasonTeams = gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeam(2016, "Houston Rockets", "Los Angeles Lakers").get(0);
+        GameBySeasonTeams insertedGameBySeasonTeams = gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, gameDate, "Houston Rockets", "Los Angeles Lakers").get(0);
 
         assertEquals(game, insertedGame);
         assertEquals(gameBySeasonTeams, insertedGameBySeasonTeams);

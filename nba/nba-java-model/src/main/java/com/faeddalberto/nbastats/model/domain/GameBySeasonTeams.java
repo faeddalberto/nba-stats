@@ -37,10 +37,10 @@ public class GameBySeasonTeams implements Serializable {
     @PrimaryKeyColumn(name = "season", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private int season;
 
-    @PrimaryKeyColumn(name = "home_team", ordinal = 1, type = PrimaryKeyType.PARTITIONED)
+    @PrimaryKeyColumn(name = "home_team", ordinal = 1, type = PrimaryKeyType.CLUSTERED)
     private String homeTeam;
 
-    @PrimaryKeyColumn(name = "visitor_team", ordinal = 2, type = PrimaryKeyType.PARTITIONED)
+    @PrimaryKeyColumn(name = "visitor_team", ordinal = 2, type = PrimaryKeyType.CLUSTERED)
     private String visitorTeam;
 
     @PrimaryKeyColumn(name = "date", ordinal = 3, type = PrimaryKeyType.CLUSTERED)

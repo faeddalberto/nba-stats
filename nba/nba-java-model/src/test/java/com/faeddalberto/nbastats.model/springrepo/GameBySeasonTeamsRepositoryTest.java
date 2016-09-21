@@ -31,11 +31,13 @@ public class GameBySeasonTeamsRepositoryTest extends CassandraIntegration {
 
     @Test
     public void whenSavingGameBySeasonTeams_thenAvailableOnRetrieval_V1() {
+        Date gameDate = new Date();
+
         final GameBySeasonTeams javaGameBySeasonTeams =
-                new GameBySeasonTeams(2016, "Chicago Bulls", "Indiana Pacers", new Date(), UUIDs.random(), 97, 95, SeasonType.REGULAR_SEASON.name());
+                new GameBySeasonTeams(2016, "Chicago Bulls", "Indiana Pacers", gameDate, UUIDs.random(), 97, 95, SeasonType.REGULAR_SEASON.name());
 
         gameBySeasonTeamsRepository.save(ImmutableSet.of(javaGameBySeasonTeams));
-        final Iterable<GameBySeasonTeams> games = gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeam(2016, "Chicago Bulls", "Indiana Pacers");
+        final Iterable<GameBySeasonTeams> games = gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, gameDate, "Chicago Bulls", "Indiana Pacers");
 
         assertEquals(javaGameBySeasonTeams.getGameId(), games.iterator().next().getGameId());
     }
@@ -47,25 +49,27 @@ public class GameBySeasonTeamsRepositoryTest extends CassandraIntegration {
         final GameBySeasonTeams javaGameBySeasonTeams =
                 new GameBySeasonTeams(2014, "Los Angeles Lakers", "Boston Celtics", myDate, UUIDs.timeBased(), 104, 111, SeasonType.REGULAR_SEASON.name());
         gameBySeasonTeamsRepository.save(ImmutableSet.of(javaGameBySeasonTeams));
-        final Iterable<GameBySeasonTeams> games = gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2014, "Los Angeles Lakers", "Boston Celtics", myDate);
+        final Iterable<GameBySeasonTeams> games = gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2014, myDate, "Los Angeles Lakers", "Boston Celtics");
 
         assertEquals(javaGameBySeasonTeams.getGameId(), games.iterator().next().getGameId());
     }
 
     @Test
     public void whenUpdatingGameBySeasonTeams_thenAvailableOnRetrieval() {
+        Date gameDate = new Date();
+
         final GameBySeasonTeams javaGameBySeasonTeams =
-                new GameBySeasonTeams(2010, "Detroit Pistons", "New York Knicks", new Date(), UUIDs.random(), 81, 102, SeasonType.REGULAR_SEASON.name());
+                new GameBySeasonTeams(2010, "Detroit Pistons", "New York Knicks", gameDate, UUIDs.random(), 81, 102, SeasonType.REGULAR_SEASON.name());
 
         gameBySeasonTeamsRepository.save(ImmutableSet.of(javaGameBySeasonTeams));
-        final Iterable<GameBySeasonTeams> game = gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeam(2010, "Detroit Pistons", "New York Knicks");
+        final Iterable<GameBySeasonTeams> game = gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2010, gameDate, "Detroit Pistons", "New York Knicks");
         assertEquals(javaGameBySeasonTeams.getGameId(), game.iterator().next().getGameId());
 
         javaGameBySeasonTeams.setHomeTeamScore(101);
         javaGameBySeasonTeams.setVisitorTeamScore(110);
         gameBySeasonTeamsRepository.save(ImmutableSet.of(javaGameBySeasonTeams));
 
-        final Iterable<GameBySeasonTeams> updatedGame = gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeam(2010, "Detroit Pistons", "New York Knicks");
+        final Iterable<GameBySeasonTeams> updatedGame = gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2010, gameDate, "Detroit Pistons", "New York Knicks");
         assertEquals(javaGameBySeasonTeams.getHomeTeamScore(), updatedGame.iterator().next().getHomeTeamScore());
         assertEquals(javaGameBySeasonTeams.getVisitorTeamScore(), updatedGame.iterator().next().getVisitorTeamScore());
     }
@@ -78,7 +82,7 @@ public class GameBySeasonTeamsRepositoryTest extends CassandraIntegration {
                 new GameBySeasonTeams(2014, "Los Angeles Lakers", "Boston Celtics", myDate, UUIDs.timeBased(), 104, 111, SeasonType.REGULAR_SEASON.name());
         gameBySeasonTeamsRepository.save(ImmutableSet.of(javaGameBySeasonTeams));
         gameBySeasonTeamsRepository.delete(javaGameBySeasonTeams);
-        final Iterable<GameBySeasonTeams> games = gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2014, "Los Angeles Lakers", "Boston Celtics", myDate);
+        final Iterable<GameBySeasonTeams> games = gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2014, myDate, "Los Angeles Lakers", "Boston Celtics");
 
         assertNotEquals(javaGameBySeasonTeams.getGameId(), games.iterator().next().getGameId());
     }

@@ -478,67 +478,67 @@ public class LoaderTest extends CassandraIntegration {
 
     private void assertGamesBySeasonTeamsIsLoadedCorrectly() throws ParseException {
         GameBySeasonTeams gameBySeasonTeamsDate1 =
-                gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2016, "Detroit Pistons", "Atlanta Hawks", formatter.parse("2015-10-27")).get(0);
+                gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, formatter.parse("2015-10-27"), "Detroit Pistons", "Atlanta Hawks").get(0);
         assertNotNull(gameBySeasonTeamsDate1);
         assertEquals(94, gameBySeasonTeamsDate1.getHomeTeamScore());
         assertEquals(106, gameBySeasonTeamsDate1.getVisitorTeamScore());
 
         GameBySeasonTeams gameBySeasonTeamsDate2 =
-                gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2016, "New Orleans Pelicans", "Atlanta Hawks", formatter.parse("2015-11-06")).get(0);
+                gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, formatter.parse("2015-11-06"), "New Orleans Pelicans", "Atlanta Hawks").get(0);
         assertNotNull(gameBySeasonTeamsDate2);
         assertEquals(115, gameBySeasonTeamsDate2.getHomeTeamScore());
         assertEquals(121, gameBySeasonTeamsDate2.getVisitorTeamScore());
 
         GameBySeasonTeams gameBySeasonTeamsDate3 =
-                gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2016, "Atlanta Hawks", "Sacramento Kings", formatter.parse("2015-11-18")).get(0);
+                gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, formatter.parse("2015-11-18"), "Atlanta Hawks", "Sacramento Kings").get(0);
         assertNotNull(gameBySeasonTeamsDate3);
         assertEquals(103, gameBySeasonTeamsDate3.getHomeTeamScore());
         assertEquals(97, gameBySeasonTeamsDate3.getVisitorTeamScore());
 
         GameBySeasonTeams gameBySeasonTeamsDate4 =
-                gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2016, "Atlanta Hawks", "Oklahoma City Thunder", formatter.parse("2015-11-30")).get(0);
+                gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, formatter.parse("2015-11-30"), "Atlanta Hawks", "Oklahoma City Thunder").get(0);
         assertNotNull(gameBySeasonTeamsDate4);
         assertEquals(106, gameBySeasonTeamsDate4.getHomeTeamScore());
         assertEquals(100, gameBySeasonTeamsDate4.getVisitorTeamScore());
 
         GameBySeasonTeams gameBySeasonTeamsDate5 =
-                gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2016, "Atlanta Hawks", "Philadelphia 76ers", formatter.parse("2015-12-16")).get(0);
+                gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, formatter.parse("2015-12-16"), "Atlanta Hawks", "Philadelphia 76ers").get(0);
         assertNotNull(gameBySeasonTeamsDate5);
         assertEquals(127, gameBySeasonTeamsDate5.getHomeTeamScore());
         assertEquals(106, gameBySeasonTeamsDate5.getVisitorTeamScore());
 
         GameBySeasonTeams gameBySeasonTeamsDate6 =
-                gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2016, "Houston Rockets", "Atlanta Hawks", formatter.parse("2015-12-29")).get(0);
+                gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, formatter.parse("2015-12-29"), "Houston Rockets", "Atlanta Hawks").get(0);
         assertNotNull(gameBySeasonTeamsDate6);
         assertEquals(115, gameBySeasonTeamsDate6.getHomeTeamScore());
         assertEquals(121, gameBySeasonTeamsDate6.getVisitorTeamScore());
 
         GameBySeasonTeams gameBySeasonTeamsDate7 =
-                gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2016, "Portland Trail Blazers", "Atlanta Hawks", formatter.parse("2016-01-20")).get(0);
+                gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, formatter.parse("2016-01-20"), "Portland Trail Blazers", "Atlanta Hawks").get(0);
         assertNotNull(gameBySeasonTeamsDate7);
         assertEquals(98, gameBySeasonTeamsDate7.getHomeTeamScore());
         assertEquals(104, gameBySeasonTeamsDate7.getVisitorTeamScore());
 
         GameBySeasonTeams gameBySeasonTeamsDate8 =
-                gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2016, "Atlanta Hawks", "Indiana Pacers", formatter.parse("2016-02-05")).get(0);
+                gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, formatter.parse("2016-02-05"), "Atlanta Hawks", "Indiana Pacers").get(0);
         assertNotNull(gameBySeasonTeamsDate8);
         assertEquals(102, gameBySeasonTeamsDate8.getHomeTeamScore());
         assertEquals(96, gameBySeasonTeamsDate8.getVisitorTeamScore());
 
         GameBySeasonTeams gameBySeasonTeamsDate9 =
-                gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2016, "Los Angeles Clippers", "Atlanta Hawks", formatter.parse("2016-03-04")).get(0);
+                gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, formatter.parse("2016-03-04"), "Los Angeles Clippers", "Atlanta Hawks").get(0);
         assertNotNull(gameBySeasonTeamsDate9);
         assertEquals(77, gameBySeasonTeamsDate9.getHomeTeamScore());
         assertEquals(106, gameBySeasonTeamsDate9.getVisitorTeamScore());
 
         GameBySeasonTeams gameBySeasonTeamsDate0 =
-                gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2016, "Washington Wizards", "Atlanta Hawks", formatter.parse("2016-03-21")).get(0);
+                gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, formatter.parse("2016-03-21"), "Washington Wizards", "Atlanta Hawks").get(0);
         assertNotNull(gameBySeasonTeamsDate0);
         assertEquals(102, gameBySeasonTeamsDate0.getHomeTeamScore());
         assertEquals(117, gameBySeasonTeamsDate0.getVisitorTeamScore());
 
         GameBySeasonTeams gameBySeasonTeamsDate01 =
-                gameBySeasonTeamsRepository.findBySeasonHomeTeamVisitorTeamDate(2016, "Atlanta Hawks", "Washington Wizards", formatter.parse("2016-04-13")).get(0);
+                gameBySeasonTeamsRepository.findBySeasonDateHomeTeamVisitorTeam(2016, formatter.parse("2016-04-13"), "Atlanta Hawks", "Washington Wizards").get(0);
         assertNotNull(gameBySeasonTeamsDate01);
         assertEquals(109, gameBySeasonTeamsDate01.getHomeTeamScore());
         assertEquals(98, gameBySeasonTeamsDate01.getVisitorTeamScore());

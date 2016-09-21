@@ -65,15 +65,15 @@ CREATE TABLE IF NOT EXISTS nba.game (
 
 CREATE TABLE IF NOT EXISTS nba.game_by_season_teams (
     season int,
+    date timestamp,
     home_team text,
     visitor_team text,
-    date timestamp,
     game_id uuid,
     home_team_score int,
     visitor_team_score int,
     season_type text,
-    PRIMARY KEY((season, home_team, visitor_team), date, game_id)
-) WITH CLUSTERING ORDER BY (date ASC, game_id ASC);
+    PRIMARY KEY(season, date, home_team, visitor_team, game_id)
+) WITH CLUSTERING ORDER BY (date ASC, home_team ASC, visitor_team ASC, game_id ASC);
 
 CREATE TABLE IF NOT EXISTS nba.player_stats_by_game (
     game_id uuid,

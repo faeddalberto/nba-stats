@@ -1,14 +1,20 @@
 -teams' winning percentage in a season
-    game table
-        - home wins
-        - away wins
+    - home wins         done
+    - away wins         done
+    - total wins        done
+    - win percentage    done
+
+
+    - print conference tables ordered by win percentage
+
 
 -teams' average scored points in a month/season
-    game table
-        - average points home
-        - average points away
+    - average points home
+    - average points away
 
--triple doubles
--players scoring more than 40 points in a game
--players with more than 15 assists in a game
--players with more than 20 rebounds in a game
+
+- players triple doubles                                        done
+- players scoring more than 40 points in a game                 done
+- players with more than 15 assists in a game                   done
+- players with more than 20 rebounds in a game                  done
+- players averages (points, assists, rebounds) in a month       done
