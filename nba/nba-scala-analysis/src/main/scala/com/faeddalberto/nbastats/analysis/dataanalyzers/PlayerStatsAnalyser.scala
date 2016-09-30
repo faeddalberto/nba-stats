@@ -1,7 +1,7 @@
 package com.faeddalberto.nbastats.analysis.dataanalyzers
 
 import com.faeddalberto.nbastats.analysis.context.ContextCreator
-import com.faeddalberto.nbastats.analysis.domain.{StatsByMonth, StatsByUsage}
+import com.faeddalberto.nbastats.analysis.domain.{PlayerStatsByMonth, PlayerStatsByUsage}
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.cassandra.CassandraSQLContext
 import org.apache.spark.sql.functions._
@@ -29,7 +29,7 @@ object PlayerStatsAnalyser {
 
   }
 
-  def getPlayersAveragesSortedByUsageForSeason(season :Int) :Array[StatsByUsage] = {
+  def getPlayersAveragesSortedByUsageForSeason(season :Int) :Array[PlayerStatsByUsage] = {
 
     val csc = ContextCreator.getCassandraSQLContext()
 
@@ -52,13 +52,13 @@ object PlayerStatsAnalyser {
       .select("season", "player_name", "games_played",
         "average_points", "average_assists", "average_rebounds", "average_minutes_played")
       .rdd
-      .map(row => new StatsByUsage(
+      .map(row => new PlayerStatsByUsage(
                       row.getInt(0), row.getString(1), row.getLong(2), row.getDouble(3),
                         row.getDouble(4), row.getDouble(5), row.getDouble(6)))
       .collect()
   }
 
-  def getPlayerAveragesThroughoutSeasonByMonth(team :String, player :String, season :Int) :Array[StatsByMonth] = {
+  def getPlayerAveragesThroughoutSeasonByMonth(team :String, player :String, season :Int) :Array[PlayerStatsByMonth] = {
 
     val csc = ContextCreator.getCassandraSQLContext()
 
@@ -79,7 +79,7 @@ object PlayerStatsAnalyser {
       .select("season", "month", "player_team", "player_name", "games_played",
               "average_points", "average_assists", "average_rebounds", "average_minutes_played")
       .rdd
-      .map(row => StatsByMonth(
+      .map(row => PlayerStatsByMonth(
                   row.getInt(0), row.getInt(1), row.getString(2), row.getString(3),
                     row.getLong(4), row.getDouble(5), row.getDouble(6), row.getDouble(7), row.getDouble(8)))
       .collect()

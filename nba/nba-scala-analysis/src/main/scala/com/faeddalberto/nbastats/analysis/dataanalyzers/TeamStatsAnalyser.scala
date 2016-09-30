@@ -4,7 +4,7 @@ import com.faeddalberto.nbastats.analysis.context.ContextCreator
 import com.datastax.spark.connector._
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.cassandra.CassandraSQLContext
-import com.faeddalberto.nbastats.analysis.domain.{StatsBySeason, TeamSeasonPointsAverages, TeamSeasonStats}
+import com.faeddalberto.nbastats.analysis.domain.{TeamSeasonPointsAverages, TeamSeasonStats}
 
 object TeamStatsAnalyser {
 
