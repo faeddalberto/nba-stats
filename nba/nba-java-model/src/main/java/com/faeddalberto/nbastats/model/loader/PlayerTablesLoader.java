@@ -34,6 +34,6 @@ public class PlayerTablesLoader {
             batchStatement.add(careerStepStmt);
         }
 
-        cassandraConfig.session().getObject().execute(batchStatement);
+        cassandraConfig.session().getObject().executeAsync(batchStatement);
     }
 }

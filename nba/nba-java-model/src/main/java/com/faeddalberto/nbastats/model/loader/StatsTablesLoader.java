@@ -36,6 +36,6 @@ public class StatsTablesLoader {
         batchStatement.add(playerStatsByOpponentStmt);
         batchStatement.add(statsBySeasonStmt);
 
-        cassandraConfig.session().getObject().execute(batchStatement);
+        cassandraConfig.session().getObject().executeAsync(batchStatement);
     }
 }

@@ -24,7 +24,7 @@ public class GameTablesLoader {
         batch.add(gameInsert(game));
         batch.add(gameBySeasonTeamsInsert(gameBySeasonTeams));
 
-        cassandraConfig.cassandraTemplate().execute(batch);
+        cassandraConfig.cassandraTemplate().executeAsynchronously(batch);
     }
 
     private Insert gameInsert(Game game) {

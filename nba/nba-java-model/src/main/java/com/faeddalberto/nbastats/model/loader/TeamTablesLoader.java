@@ -29,7 +29,7 @@ public class TeamTablesLoader {
         List<Insert> teamPlayers = teamRosterByYearInsert(teamRosterByYearPlayerList);
         teamPlayers.forEach(batch::add);
 
-        cassandraConfig.cassandraTemplate().execute(batch);
+        cassandraConfig.cassandraTemplate().executeAsynchronously(batch);
     }
 
     private Insert teamInsert(Team team) {
