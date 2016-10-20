@@ -1,8 +1,7 @@
 package com.faeddalberto.nbastats.analysis.dataanalyzers
 
 import com.faeddalberto.nbastats.analysis.context.ContextCreator
-import com.datastax.spark.connector._
-import org.apache.spark.sql.DataFrame
+import com.faeddalberto.nbastats.analysis.dataanalyzers.TableLoader.loadTable
 import org.apache.spark.sql.cassandra.CassandraSQLContext
 import com.faeddalberto.nbastats.analysis.domain.{TeamSeasonPointsAverages, TeamSeasonStats}
 
@@ -11,12 +10,8 @@ object TeamStatsAnalyser {
   val REGULAR_SEASON_TOTAL_GAMES = 82
 
   def getTeamsHomeAveragePointsMadeConceded(season :Int) :Array[TeamSeasonPointsAverages] = {
-    val csc = ContextCreator.getCassandraSQLContext()
 
-    val gameBySeasonTeams = csc.read
-      .format("org.apache.spark.sql.cassandra")
-      .options(Map("keyspace" -> "nba", "table" -> "game_by_season_teams"))
-      .load()
+    val gameBySeasonTeams = loadTable("nba", "game_by_season_teams")
 
     gameBySeasonTeams
       .filter("season = " + season)
@@ -31,12 +26,8 @@ object TeamStatsAnalyser {
   }
 
   def getTeamsAwayAveragePointsMadeConceded(season :Int) :Array[TeamSeasonPointsAverages] = {
-    val csc = ContextCreator.getCassandraSQLContext()
 
-    val gameBySeasonTeams = csc.read
-      .format("org.apache.spark.sql.cassandra")
-      .options(Map("keyspace" -> "nba", "table" -> "game_by_season_teams"))
-      .load()
+    val gameBySeasonTeams = loadTable("nba", "game_by_season_teams")
 
     gameBySeasonTeams
       .filter("season = " + season)
