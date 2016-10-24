@@ -4,7 +4,6 @@ import com.faeddalberto.nbastats.model.domain.Game;
 import com.faeddalberto.nbastats.model.domain.Team;
 import com.faeddalberto.nbastats.model.enums.SeasonType;
 import com.sun.tools.javac.util.Pair;
-import com.sun.xml.internal.ws.model.RuntimeModelerException;
 
 import java.io.*;
 import java.text.DateFormat;
