@@ -4,7 +4,6 @@ node ('master') {
     stage('Build and Test') {
         env.PATH = "${tool 'Maven3'}/bin:${env.PATH}"
         checkout scm
-        sh 'cd nba'
-        sh 'mvn clean package'
+        sh 'cd nba && mvn clean package'
     }
 }
